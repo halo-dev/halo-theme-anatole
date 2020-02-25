@@ -10,19 +10,13 @@
                 <div class="pagination">
                     <ul class="clearfix">
                         <#if posts.hasPrevious()>
-                            <#if posts.number == 1>
-                                <li class="pre pagbuttons">
-                                    <a class="btn" role="navigation" href="${context!}/categories/${category.slugName!}">上一页</a>
-                                </li>
-                            <#else >
-                                <li class="pre pagbuttons">
-                                    <a class="btn" role="navigation" href="${context!}/categories/${category.slugName!}/page/${posts.number}">上一页</a>
-                                </li>
-                            </#if>
+                            <li class="pre pagbuttons">
+                                <a class="btn" role="navigation" href="${prePageFullPath!}">上一页</a>
+                            </li>
                         </#if>
                         <#if posts.hasNext()>
                             <li class="next pagbuttons">
-                                <a class="btn" role="navigation" href="${context!}/categories/${category.slugName!}/page/${posts.number+2}">下一页</a>
+                                <a class="btn" role="navigation" href="${nextPageFullPath!}">下一页</a>
                             </li>
                         </#if>
                     </ul>
