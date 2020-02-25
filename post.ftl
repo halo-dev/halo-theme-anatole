@@ -25,7 +25,7 @@
                                 <#if tags?size gt 0>
                                     <i class="fa fa-tag"></i>
                                     <#list tags as tag>
-                                        <a href="${context!}/tags/${tag.slugName}" class="tag">&nbsp;${tag.name}</a>
+                                        <a href="${tag.fullPath!}" class="tag">&nbsp;${tag.name}</a>
                                     </#list>
                                 </#if>
                             </div>
