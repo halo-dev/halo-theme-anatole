@@ -1,4 +1,4 @@
-<#macro head title,keywords,description>
+<#macro head title>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,8 +11,8 @@
     <meta name="renderer" content="webkit">
     <meta name="theme-color" content="${settings.google_color!'#fff'}">
     <meta name="author" content="${user.nickname!}" />
-    <meta name="keywords" content="${keywords!}"/>
-    <meta name="description" content="${description!}" />
+    <meta name="keywords" content="${meta_keywords!}"/>
+    <meta name="description" content="${meta_description!}" />
     <@global.head />
     <link href="${theme_base!}/source/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
     <link href="${theme_base!}/source/css/blog_basic.min.css?version=88107691fe" rel="stylesheet">

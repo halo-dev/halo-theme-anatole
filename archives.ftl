@@ -1,5 +1,5 @@
 <#include "module/macro.ftl">
-<@head title="归档 · ${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}" />
+<@head title="归档 · ${options.blog_title!}"/>
 <#include "module/sidebar.ftl">
 <div class="main">
     <#include "module/page-top.ftl">

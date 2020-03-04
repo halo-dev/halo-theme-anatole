@@ -1,5 +1,5 @@
 <#include "module/macro.ftl">
-<@head title="${post.title!} · ${options.blog_title!}" keywords="${post.title!},${options.seo_keywords!},${tagWords!}" description="${post.summary!}" />
+<@head title="${post.title!} · ${options.blog_title!}"/>
 <#include "module/sidebar.ftl">
 <div class="main">
     <#include "module/page-top.ftl">
