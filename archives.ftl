@@ -25,20 +25,22 @@
                 </ul>
             </div>
             <#if posts.totalPages gt 1>
-                <div class="pagination">
-                    <ul class="clearfix">
-                        <#if posts.hasPrevious()>
-                            <li class="pre pagbuttons">
-                                <a class="btn" role="navigation" href="${prePageFullPath!}">上一页</a>
-                            </li>
-                        </#if>
-                        <#if posts.hasNext()>
-                            <li class="next pagbuttons">
-                                <a class="btn" role="navigation" href="${nextPageFullPath!}">下一页</a>
-                            </li>
-                        </#if>
-                    </ul>
-                </div>
+                <@postTag method="pagination" page="${posts.number}" total="${posts.totalPages}" display="3" isArchives="true">
+                    <div class="pagination">
+                        <ul class="clearfix">
+                            <#if pagination.hasPrev>
+                                <li class="pre pagbuttons">
+                                    <a class="btn" role="navigation" href="${pagination.prePageFullPath!}">上一页</a>
+                                </li>
+                            </#if>
+                            <#if pagination.hasNext>
+                                <li class="next pagbuttons">
+                                    <a class="btn" role="navigation" href="${pagination.nextPageFullPath!}">下一页</a>
+                                </li>
+                            </#if>
+                        </ul>
+                    </div>
+                </@postTag>
             </#if>
         </div>
     </div>
