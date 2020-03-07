@@ -53,9 +53,9 @@
                                 <a class="btn" role="navigation" href="${nextPost.fullPath!}" title="${nextPost.title}">下一篇</a>
                             </li>
                         </#if>
-                        <#if prePost??>
+                        <#if prevPost??>
                             <li class="pre pagbuttons">
-                                <a class="btn" role="navigation" href="${prePost.fullPath!}" title="${prePost.title}">上一篇</a>
+                                <a class="btn" role="navigation" href="${prevPost.fullPath!}" title="${prevPost.title}">上一篇</a>
                             </li>
                         </#if>
                     </ul>

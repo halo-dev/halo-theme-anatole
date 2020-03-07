@@ -7,12 +7,12 @@
         <div class="content">
             <#include "module/post_entry.ftl">
             <#if posts.totalPages gt 1>
-                <@categoryTag method="pagination" page="${posts.number}" total="${posts.totalPages}" display="3" slug="${category.slug!}">
+                <@paginationTag method="categoryPosts" page="${posts.number}" total="${posts.totalPages}" display="3" slug="${category.slug!}">
                     <div class="pagination">
                         <ul class="clearfix">
                             <#if pagination.hasPrev>
                                 <li class="pre pagbuttons">
-                                    <a class="btn" role="navigation" href="${pagination.prePageFullPath!}">上一页</a>
+                                    <a class="btn" role="navigation" href="${pagination.prevPageFullPath!}">上一页</a>
                                 </li>
                             </#if>
                             <#if pagination.hasNext>
@@ -22,7 +22,7 @@
                             </#if>
                         </ul>
                     </div>
-                </@categoryTag>
+                </@paginationTag>
             </#if>
         </div>
     </div>
