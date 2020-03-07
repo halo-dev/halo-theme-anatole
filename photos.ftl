@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>图库 · ${options.blog_title!}</title>
+    <title>图库 - ${blog_title!}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="${theme_base!}/source/plugins/gallery/css/main.css" />
@@ -36,7 +36,7 @@
     </section>
     <footer id="footer">
         <ul class="copyright">
-            <li>&copy; ${options.blog_title!}.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a>.</li>
+            <li>&copy; ${blog_title!}.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a>.</li>
         </ul>
     </footer>
 </div>

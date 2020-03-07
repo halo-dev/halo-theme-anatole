@@ -1,5 +1,5 @@
 <#include "module/macro.ftl">
-<@head title="归档 · ${options.blog_title!}"/>
+<@head title="归档 - ${blog_title!}"/>
 <#include "module/sidebar.ftl">
 <div class="main">
     <#include "module/page-top.ftl">

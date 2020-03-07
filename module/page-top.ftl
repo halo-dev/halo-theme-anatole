@@ -3,7 +3,7 @@
         <@menuTag method="list">
             <#list menus?sort_by('priority') as menu>
                 <li>
-                    <a href="${menu.url}" target="${menu.target!}">${menu.name} </a>
+                    <a href="${menu.url!}" target="${menu.target!}">${menu.name!} </a>
                 </li>
             </#list>
         </@menuTag>
@@ -15,7 +15,7 @@
             </li>
         </div>
         <div class="avatar">
-            <img src="${settings.icon!'${theme_base!}/source/images/logo.png'}" />
+            <img src="${settings.icon!'${user.avatar!}'}" />
         </div>
     </div>
 </div>

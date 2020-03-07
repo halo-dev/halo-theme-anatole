@@ -1,5 +1,5 @@
 <#include "module/macro.ftl">
-<@head title="${post.title!} · ${options.blog_title!}"/>
+<@head title="${post.title!} - ${blog_title!}"/>
 <#include "module/sidebar.ftl">
 <div class="main">
     <#include "module/page-top.ftl">
@@ -42,7 +42,7 @@
                            class="fa fa-weibo"></a>
                     </div>
                     <div class="twitter">
-                        <a href="http://twitter.com/home?status=${post.fullPath!} ,${options.blog_title!},${post.title},;"
+                        <a href="http://twitter.com/home?status=${post.fullPath!},${blog_title!},${post.title};"
                            class="fa fa-twitter"></a>
                     </div>
                 </div>
