@@ -3,6 +3,7 @@
 <head>
     <title>图库 - ${blog_title!}</title>
     <meta charset="utf-8" />
+    <@global.head />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="${theme_base!}/source/plugins/gallery/css/main.css" />
     <noscript><link rel="stylesheet" href="${theme_base!}/plugins/gallery/css/noscript.css" /></noscript>
@@ -40,8 +41,8 @@
         </ul>
     </footer>
 </div>
-<script src="${theme_base!}/source/plugins/gallery/js/jquery.min.js"></script>
-<script src="${theme_base!}/source/plugins/gallery/js/skel.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/jquery@1.11.3/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/skeljs@3.0.2/dist/skel.min.js"></script>
 <script src="${theme_base!}/source/plugins/gallery/js/main.js"></script>
 <@global.statistics />
 </body>

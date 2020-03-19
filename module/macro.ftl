@@ -14,13 +14,13 @@
     <meta name="keywords" content="${meta_keywords!}"/>
     <meta name="description" content="${meta_description!}" />
     <@global.head />
-    <link href="${theme_base!}/source/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
+    <link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
     <link href="${theme_base!}/source/css/blog_basic.min.css?version=88107691fe" rel="stylesheet">
     <link href="${theme_base!}/source/css/style.min.css" type="text/css" rel="stylesheet" />
 
     <#if is_post?? || is_sheet??>
-        <link href="${theme_base!}/source/plugins/prism/css/prism-${settings.code_pretty!'Default'}.css" type="text/css" rel="stylesheet" />
-        <script type="text/javascript" src="${theme_base!}/source/plugins/prism/js/prism.js"></script>
+        <link href="//cdn.jsdelivr.net/npm/prismjs@1.19.0/themes/prism${settings.code_pretty!}.min.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/prismjs@1.19.0/prism.min.js"></script>
         <style>
             table {
                 border-spacing: 0;
@@ -79,7 +79,7 @@
 <body>
 </#macro>
 <#macro footer>
-<script type="text/javascript" src="${theme_base!}/source/js/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@1.9.1/jquery.min.js"></script>
 <script type="text/javascript">
     var url = location.href;
     var urlstatus = false;
