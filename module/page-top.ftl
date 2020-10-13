@@ -17,5 +17,11 @@
         <div class="avatar">
             <img src="${settings.icon!'${user.avatar!}'}" />
         </div>
+        <div class="searchbox">
+            <form method="get" action="/search" role="search">
+                <input class="searchtxt" type="search" name="keyword" placeholder="Search" required>
+                <a class="searchbtn" href="#"><i class="fa fa-search"></i></a>
+            </form>
+        </div>
     </div>
 </div>
