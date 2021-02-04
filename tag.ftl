@@ -5,7 +5,7 @@
     <#include "module/page-top.ftl">
     <div class="autopagerize_page_element">
         <div class="content">
-            <#include "module/post_entry.ftl">
+            <#include "module/post-entry.ftl">
             <#if posts.totalPages gt 1>
                 <@paginationTag method="tagPosts" page="${posts.number}" total="${posts.totalPages}" display="3" slug="${tag.slug!}">
                     <div class="pagination">

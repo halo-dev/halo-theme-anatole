@@ -1,7 +1,7 @@
 <div class="sidebar animated fadeInDown">
     <div class="logo-title">
         <div class="title">
-            <img src="${blog_logo!'${user.avatar!}'}" style="width:127px;<#if settings.avatar_circle!false>border-radius:50%</#if>" />
+            <img src="<#if blog_logo?? && blog_logo!=''>${blog_logo!}<#else>${user.avatar!}</#if>" style="width:127px;<#if settings.avatar_circle!true>border-radius:50%</#if>" />
             <h3 title="">
                 <a href="${blog_url!}">${blog_title!}</a>
             </h3>

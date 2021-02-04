@@ -1,12 +1,12 @@
 <#include "module/macro.ftl">
-<@head title="${keyword!} - 搜索结果 - ${blog_title!}"/>
+<@head title="搜索结果：${keyword!} - ${blog_title!}"/>
 <#include "module/sidebar.ftl">
 <div class="main">
     <#include "module/page-top.ftl">
     <div class="autopagerize_page_element">
         <div class="content">
 		<#if posts?? && posts.content?size gt 0>
-			<#include "module/post_entry.ftl">
+			<#include "module/post-entry.ftl">
             <#if posts.totalPages gt 1>
                 <@paginationTag method="search" page="${posts.number}" total="${posts.totalPages}" display="3" keyword="${keyword!}">
                     <div class="pagination">

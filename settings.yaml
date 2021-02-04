@@ -91,7 +91,7 @@ style:
       label: 圆形头像
       type: radio
       data-type: bool
-      default: false
+      default: true
       options:
         - value: true
           label: 开启
