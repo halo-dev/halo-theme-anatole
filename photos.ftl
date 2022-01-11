@@ -13,14 +13,6 @@
     <header id="header">
         <h1>图库</h1>
         <p>${user.description!}</p>
-        <ul class="icons">
-            <!--
-            <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-            <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-            <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-            <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-            -->
-        </ul>
     </header>
     <section id="thumbnails">
         <@photoTag method="list">
@@ -41,8 +33,8 @@
         </ul>
     </footer>
 </div>
-<script src="//cdn.jsdelivr.net/npm/jquery@1.11.3/dist/jquery.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/skeljs@3.0.2/dist/skel.min.js"></script>
+<script src="${theme_base!}/source/js/jquery.min.js"></script>
+<script src="${theme_base!}/source/js/skel.min.js"></script>
 <script src="${theme_base!}/source/plugins/gallery/js/main.js"></script>
 <@global.statistics />
 </body>
