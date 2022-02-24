@@ -8,7 +8,7 @@
 		<#if posts?? && posts.content?size gt 0>
 			<#include "module/post-entry.ftl">
             <#if posts.totalPages gt 1>
-                <@paginationTag method="search" page="${posts.number}" total="${posts.totalPages}" display="3" keyword="${keyword!}">
+                <@paginationTag method="search" page="${posts.number?c}" total="${posts.totalPages?c}" display="3" keyword="${keyword!}">
                     <div class="pagination">
                         <ul class="clearfix">
                             <#if pagination.hasPrev>

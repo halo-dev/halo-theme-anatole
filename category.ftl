@@ -7,7 +7,7 @@
         <div class="content">
             <#include "module/post-entry.ftl">
             <#if posts.totalPages gt 1>
-                <@paginationTag method="categoryPosts" page="${posts.number}" total="${posts.totalPages}" display="3" slug="${category.slug!}">
+                <@paginationTag method="categoryPosts" page="${posts.number?c}" total="${posts.totalPages?c}" display="3" slug="${category.slug!}">
                     <div class="pagination">
                         <ul class="clearfix">
                             <#if pagination.hasPrev>
