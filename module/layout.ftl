@@ -34,22 +34,21 @@
             </div>
         </div>
     </div>
-
-    <script type="text/javascript" src="${theme_base!}/source/js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="${theme_base!}/dist/main.umd.js"></script>
     <script type="text/javascript">
-        var url = location.href;
-        var urlstatus = false;
-        $(".nav li a").each(function () {
-            if ((url + '/').indexOf($(this).attr('href')) > -1 && $(this).attr('href') != '/') {
-                $(this).addClass('current');
+        const url = location.href;
+        let urlstatus = false;
+        const menuItems = document.querySelectorAll(".nav li a")
+        menuItems.forEach(function (node) {
+            if ((url + '/').indexOf(node.getAttribute('href')) > -1 && node.getAttribute('href') !== '/') {
+                node.classList.add('current');
                 urlstatus = true;
             } else {
-                $(this).removeClass('current');
+                node.classList.remove('current');
             }
         });
         if (!urlstatus) {
-            $(".nav li a").eq(0).addClass('current');
+            menuItems[0].classList.add('current');
         }
 
         <#if settings.hitokoto!false>
