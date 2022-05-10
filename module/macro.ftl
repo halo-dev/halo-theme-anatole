@@ -20,33 +20,6 @@
     <#if is_post?? || is_sheet??>
         <link href="${theme_base!}/source/plugins/prism/themes/prism${settings.code_pretty!''}.css" type="text/css" rel="stylesheet" />
         <script type="text/javascript" src="${theme_base!}/source/plugins/prism/prism.min.js"></script>
-        <style>
-            table {
-                border-spacing: 0;
-                border-collapse: collapse;
-                margin-top: 0;
-                margin-bottom: 16px;
-                display: block;
-                width: 100%;
-                overflow: auto;
-
-            }
-            table th {
-                font-weight: 600;
-            }
-            table th,
-            table td {
-                padding: 6px 13px;
-                border: 1px solid #dfe2e5;
-            }
-            table tr {
-                background-color: #fff;
-                border-top: 1px solid #c6cbd1;
-            }
-            table tr:nth-child(2n) {
-                background-color: #f6f8fa;
-            }
-        </style>
     </#if>
 
     <link rel="alternate" type="application/rss+xml" title="atom 1.0" href="${atom_url!}">
@@ -72,7 +45,6 @@
         ::-webkit-scrollbar-track {
             background-color: #eee;
         }
-        ${settings.custom!}
     </style>
 </head>
 <body>

@@ -140,8 +140,3 @@ style:
           label: 'Tomorrow'
         - value: '-twilight'
           label: 'Twilight'
-    custom:
-      name: custom
-      label: 自定义样式
-      type: textarea
-      placeholder: '不需要 <style></style> 标签'
