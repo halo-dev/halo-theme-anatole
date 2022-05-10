@@ -174,17 +174,6 @@ a:hover, a:active {
   border-radius: 300px;
 }
 
-.page-top .information .back_btn {
-  float: left;
-  padding-top: 5px;
-  margin-right: -10px;
-}
-
-.page-top .information .back_btn li {
-  display: initial;
-  padding-right: 40px;
-}
-
 .sidebar {
   width: 40%;
   -webkit-background-size: cover;
@@ -257,22 +246,6 @@ a:hover, a:active {
 .post {
   background-color: #FFF;
   margin: 30px;
-}
-
-.post .post-title h1 {
-  text-transform: uppercase;
-  font-size: 30px;
-  letter-spacing: 5px;
-  line-height: 1;
-}
-
-.post .post-title h2 {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 28px;
-  line-height: 1;
-  font-weight: 600;
-  color: #5f5f5f;
 }
 
 .post .post-title h3 {
@@ -410,31 +383,6 @@ a:hover, a:active {
   float: right;
 }
 
-.like-reblog-buttons {
-  float: right;
-}
-
-.like-button {
-  float: right;
-  padding: 0 0 0 10px;
-}
-
-.reblog-button {
-  float: right;
-  padding: 0;
-}
-
-#install-btn {
-  position: fixed;
-  bottom: 0px;
-  right: 6px;
-}
-
-#disqus_thread {
-  margin: 30px;
-  border-bottom: 1px solid #f2f2f2;
-}
-
 .footer {
   clear: both;
   text-align: center;
@@ -558,48 +506,6 @@ a:hover, a:active {
   color: #4B9ECE;
 }
 
-/* about */
-.about {
-  margin: 30px;
-}
-
-.about h3 {
-  font-size: 22px;
-}
-
-/* links*/
-.links {
-  margin: 30px;
-}
-
-.links h3 {
-  font-size: 22px;
-}
-
-.links a {
-  cursor: pointer;
-}
-
-/* 评论样式 */
-.comment-count {
-  color: #666;
-}
-
-.tab-community {
-  color: #666;
-}
-
-.read_more {
-  font-size: 14px;
-}
-
-.back-button {
-  padding-top: 30px;
-  max-width: 100px;
-  padding-left: 40px;
-  float: left;
-}
-
 /* 按钮样式 */
 a.btn {
   color: #868686;
@@ -640,23 +546,9 @@ a.btn {
   border-radius: 999em;
 }
 
-[role="back"] {
-  padding: 0.5em 1.25em;
-  line-height: 1.666em;
-}
-
-[role="home"] {
-  padding: 0.5em 1.25em;
-  line-height: 1.666em;
-}
-
 [role="navigation"] {
   padding: 0.5em 1.25em;
   line-height: 1.666em;
-}
-
-[role="tags"] {
-  padding: 6px 12px;
 }
 
 /* Menu样式 */
@@ -716,46 +608,6 @@ a.btn {
   visibility: hidden;
   width: 100px;
   float: right;
-}
-
-.page_404 {
-  text-align: center;
-  padding-top: 50px;
-}
-
-.searchbox {
-  float: right;
-  padding-top: 5px;
-  margin-right: 15px;
-  margin-left: -10px;
-}
-
-.searchbox:hover .searchtxt {
-  opacity: 1;
-  width: 120px;
-  padding: 0 6px;
-}
-
-.searchbox:hover .searchbtn {
-  background: #fff;
-}
-
-.searchbox:hover .searchbtn i {
-  color: #34ace0;
-  transition: 0.9s;
-}
-
-.searchtxt {
-  border-radius: 5px;
-  border: 1px solid #000;
-  background: none;
-  outline: none;
-  color: black;
-  font-size: 12px;
-  transition: 0.2s;
-  line-height: 20px;
-  width: 0;
-  opacity: 0;
 }
 
 @media screen and (max-width: 960px) {

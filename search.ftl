@@ -7,12 +7,12 @@
               <div class="pagination">
                 <ul class="clearfix">
                     <#if pagination.hasPrev>
-                      <li class="pre pagbuttons">
+                      <li class="pre">
                         <a class="btn" role="navigation" href="${pagination.prevPageFullPath!}">上一页</a>
                       </li>
                     </#if>
                     <#if pagination.hasNext>
-                      <li class="next pagbuttons">
+                      <li class="next">
                         <a class="btn" role="navigation" href="${pagination.nextPageFullPath!}">下一页</a>
                       </li>
                     </#if>
@@ -21,7 +21,7 @@
             </@paginationTag>
         </#if>
     <#else>
-      <div class="post">
+      <div class="">
         <h3 class="page-title">没有找到任何东西！</h3>
       </div>
     </#if>

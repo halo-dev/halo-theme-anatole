@@ -3,7 +3,7 @@
   <div class="post-page">
     <div class="post animated fadeInDown">
       <div class="post-title">
-        <h3><a>links</a></h3>
+        <h3>友情链接</h3>
       </div>
       <div class="post-content">
           <@linkTag method="list">

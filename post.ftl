@@ -44,12 +44,12 @@
     <div class="pagination">
       <ul class="clearfix">
           <#if nextPost??>
-            <li class="next pagbuttons">
+            <li class="next">
               <a class="btn" role="navigation" href="${nextPost.fullPath!}" title="${nextPost.title}">下一篇</a>
             </li>
           </#if>
           <#if prevPost??>
-            <li class="pre pagbuttons">
+            <li class="pre">
               <a class="btn" role="navigation" href="${prevPost.fullPath!}" title="${prevPost.title}">上一篇</a>
             </li>
           </#if>

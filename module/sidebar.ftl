@@ -7,7 +7,7 @@
             </h3>
             <div class="description">
                 <#if settings.hitokoto!false>
-                    <p id="yiyan">获取中...</p>
+                    <p id="hitokoto">获取中...</p>
                 <#else >
                     <p>${user.description!}</p>
                 </#if>
