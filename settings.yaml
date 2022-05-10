@@ -64,28 +64,6 @@ style:
       name: icon
       label: 右上角图标
       type: attachment
-    post_title_upper:
-      name: post_title_upper
-      label: 文章标题大写
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    blog_title_upper:
-      name: blog_title_upper
-      label: 博客标题大写
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
     avatar_circle:
       name: avatar_circle
       label: 圆形头像

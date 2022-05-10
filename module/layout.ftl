@@ -23,21 +23,6 @@
               rel="stylesheet"/>
         <script type="text/javascript" src="${theme_base!}/source/plugins/prism/prism.min.js"></script>
       </#if>
-
-    <style>
-      <#if !settings.post_title_upper!true>
-      .post .post-title h3 {
-        text-transform: none;
-      }
-
-      </#if>
-      <#if !settings.blog_title_upper!true>
-      .sidebar .logo-title .title h3 {
-        text-transform: none;
-      }
-
-      </#if>
-    </style>
   </head>
   <body>
 
