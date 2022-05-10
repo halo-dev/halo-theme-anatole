@@ -7,12 +7,12 @@
             <ul class="clearfix">
                 <#if pagination.hasPrev>
                   <li class="pre">
-                    <a class="btn" role="navigation" href="${pagination.prevPageFullPath!}">上一页</a>
+                    <a class="btn" role="navigation" href="${pagination.prevPageFullPath!}" title="上一页">上一页</a>
                   </li>
                 </#if>
                 <#if pagination.hasNext>
                   <li class="next">
-                    <a class="btn" role="navigation" href="${pagination.nextPageFullPath!}">下一页</a>
+                    <a class="btn" role="navigation" href="${pagination.nextPageFullPath!}" title="下一页">下一页</a>
                   </li>
                 </#if>
             </ul>
