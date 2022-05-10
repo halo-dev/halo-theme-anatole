@@ -44,9 +44,9 @@ sns:
       placeholder: '只需填入邮箱地址即可'
     github:
       name: github
-      label: Github
+      label: GitHub
       type: text
-      placeholder: '只需填入 Github 用户名即可'
+      placeholder: '只需填入 GitHub 用户名即可'
     qq:
       name: qq
       label: QQ

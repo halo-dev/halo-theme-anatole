@@ -39,6 +39,10 @@ a {
   }
 }
 
+svg {
+  display: inline-block;
+}
+
 /*basic styles ends*/
 /*animation starts*/
 
@@ -330,6 +334,10 @@ a {
       i {
         margin-right: 6px;
       }
+      
+      svg {
+        vertical-align: -7%;
+      }
     }
 
     .tags {
@@ -472,11 +480,16 @@ a {
   border-radius: 300px;
   background-color: #3E3E3E;
   margin-right: 5px;
+  display: flex;
+  justify-content: center;
 
   a {
     color: #fff;
-    padding: 11px;
-    font-size: 12px;
+    align-self: center;
+
+    svg {
+      vertical-align: -10%;
+    }
 
     &:hover {
       color: #ED6243;
@@ -491,10 +504,16 @@ a {
   border-radius: 300px;
   background-color: #ED6243;
   margin-right: 5px;
+  display: flex;
+  justify-content: center;
 
   a {
     color: #fff;
-    padding: 9px;
+    align-self: center;
+
+    svg {
+      vertical-align: -10%;
+    }
 
     &:hover {
       color: #BD4226;
@@ -508,10 +527,16 @@ a {
   border-radius: 300px;
   background-color: #59C0FD;
   margin-right: 5px;
+  display: flex;
+  justify-content: center;
 
   a {
     color: #fff;
-    padding: 9px;
+    align-self: center;
+    
+    svg {
+      vertical-align: -10%;
+    }
 
     &:hover {
       color: #4B9ECE;
