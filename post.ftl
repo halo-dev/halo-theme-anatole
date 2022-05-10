@@ -12,7 +12,7 @@
                             <a>${post.title}</a>
                         </h3>
                     </div>
-                    <div class="post-content">
+                    <div class="post-content markdown-body">
                         ${post.formatContent!}
                     </div>
                     <div class="post-footer">

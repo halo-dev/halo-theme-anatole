@@ -1,0 +1,21 @@
+{
+  "name": "@halo-dev/halo-theme-anatole",
+  "version": "1.2.0",
+  "description": "Default theme for Halo",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build"
+  },
+  "author": "@halo-dev",
+  "license": "ISC",
+  "repository": "git@github.com:halo-dev/halo-theme-anatole.git",
+  "devDependencies": {
+    "@types/node": "^16.11.33",
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.13",
+    "rollup-plugin-watch": "^1.0.1",
+    "sass": "^1.51.0",
+    "typescript": "^4.6.4",
+    "vite": "^2.9.8"
+  }
+}
