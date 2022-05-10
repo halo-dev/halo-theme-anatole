@@ -1,1 +1,1 @@
-(function(e){typeof define=="function"&&define.amd?define(e):e()})(function(){"use strict";var e="",n=""});
+(function(i){typeof define=="function"&&define.amd?define(i):i()})(function(){"use strict";var i="",n="",e=""});
