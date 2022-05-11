@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="zh">
 <head>
     <title>图库 - ${blog_title!}</title>
     <meta charset="utf-8" />
@@ -29,7 +29,7 @@
     </section>
     <footer id="footer">
         <ul class="copyright">
-            <li>&copy; ${blog_title!}.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a>.</li>
+            <li>&copy; ${blog_title!}.</li><li>Design: <a href="https://html5up.net">HTML5 UP</a>.</li>
         </ul>
     </footer>
 </div>

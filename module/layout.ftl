@@ -28,10 +28,8 @@
     <#include "./sidebar.ftl">
     <div class="main">
         <#include "./page-top.ftl">
-        <div class="autopagerize_page_element">
-            <div class="content">
-                <#nested />
-            </div>
+        <div class="content">
+            <#nested />
         </div>
     </div>
     <script type="text/javascript" src="${theme_base!}/dist/main.umd.js"></script>

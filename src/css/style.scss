@@ -47,60 +47,8 @@ svg {
 /*animation starts*/
 
 .animated {
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
-  -o-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation-duration: 1s;
-  -moz-animation-duration: 1s;
-  -ms-animation-duration: 1s;
-  -o-animation-duration: 1s;
   animation-duration: 1s;
-
-  &.hinge {
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration: 1s;
-    -ms-animation-duration: 1s;
-    -o-animation-duration: 1s;
-    animation-duration: 1s;
-  }
-}
-
-@-webkit-keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-20px);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-  }
-}
-
-@-moz-keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -moz-transform: translateY(-20px);
-  }
-
-  100% {
-    opacity: 1;
-    -moz-transform: translateY(0);
-  }
-}
-
-@-o-keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -o-transform: translateY(-20px);
-  }
-
-  100% {
-    opacity: 1;
-    -o-transform: translateY(0);
-  }
 }
 
 @keyframes fadeInDown {
@@ -116,9 +64,6 @@ svg {
 }
 
 .fadeInDown {
-  -webkit-animation-name: fadeInDown;
-  -moz-animation-name: fadeInDown;
-  -o-animation-name: fadeInDown;
   animation-name: fadeInDown;
 }
 
@@ -373,7 +318,7 @@ svg {
 
 .pagination {
   margin: 30px;
-  padding: 0px 0 56px 0;
+  padding: 0 0 56px 0;
   border-bottom: 1px solid #f2f2f2;
 
   ul {
@@ -470,7 +415,7 @@ svg {
 /* share */
 
 .share {
-  margin: 0px 30px;
+  margin: 0 30px;
   display: inline-flex;
 }
 
@@ -570,7 +515,7 @@ a.btn {
   &:hover {
     display: inline-block;
     position: relative;
-    outline: 0px;
+    outline: 0;
     color: #464545;
     background: transparent;
     font-size: 14px;
@@ -597,7 +542,7 @@ a.btn {
   padding-top: 30px;
 
   .btn-down {
-    margin: 0px;
+    margin: 0;
 
     li {
       list-style: none;
