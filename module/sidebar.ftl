@@ -1,9 +1,11 @@
 <div class="sidebar animated fadeInDown">
     <div class="logo-title">
         <div class="title">
-            <img alt="Logo" class="inline-block" src="<#if blog_logo?? && blog_logo!=''>${blog_logo!}<#else>${user.avatar!}</#if>" style="width:127px;<#if settings.avatar_circle!true>border-radius:50%</#if>" />
-            <h3>
-                <a href="${blog_url!}">${blog_title!}</a>
+            <img alt="Logo" class="inline-block"
+                 src="<#if blog_logo?? && blog_logo!=''>${blog_logo!}<#else>${user.avatar!}</#if>"
+                 style="width:127px;<#if settings.avatar_circle!true>border-radius:50%</#if>"/>
+            <h3 class="!mt-2 !mb-0">
+                <a href="${blog_url!}" title="${blog_title!}">${blog_title!}</a>
             </h3>
             <div class="description">
                 <#if settings.hitokoto!false>

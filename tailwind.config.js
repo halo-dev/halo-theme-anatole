@@ -1,8 +1,8 @@
 module.exports = {
-  mode: "jit",
-  content: ["./*.ftl","./module/*.ftl"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+    mode: "jit",
+    content: ["./*.ftl", "./module/*.ftl"],
+    theme: {
+        extend: {},
+    },
+    plugins: [],
 }

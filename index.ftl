@@ -3,20 +3,15 @@
     <#include "module/post-entry.ftl">
     <#if posts.totalPages gt 1>
         <@paginationTag method="index" page="${posts.number?c}" total="${posts.totalPages?c}" display="3">
-          <div class="pagination">
-            <ul class="clearfix">
+            <div class="pagination flex justify-between items-center">
                 <#if pagination.hasPrev>
-                  <li class="pre">
-                    <a class="btn" role="navigation" href="${pagination.prevPageFullPath!}" title="上一页">上一页</a>
-                  </li>
+                    <a class="btn w-20" role="navigation" href="${pagination.prevPageFullPath!}" title="上一页">上一页</a>
                 </#if>
+                <span class="text-sm">${posts.number+1}/${posts.totalPages!}</span>
                 <#if pagination.hasNext>
-                  <li class="next">
-                    <a class="btn" role="navigation" href="${pagination.nextPageFullPath!}" title="下一页">下一页</a>
-                  </li>
+                    <a class="btn w-20" role="navigation" href="${pagination.nextPageFullPath!}" title="下一页">下一页</a>
                 </#if>
-            </ul>
-          </div>
+            </div>
         </@paginationTag>
     </#if>
 </@layout>

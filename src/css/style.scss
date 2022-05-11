@@ -162,7 +162,6 @@ svg {
         font-weight: bold;
         letter-spacing: 2px;
         line-height: 1;
-        margin: 0;
       }
 
       a {
@@ -279,7 +278,7 @@ svg {
       i {
         margin-right: 6px;
       }
-      
+
       svg {
         vertical-align: -7%;
       }
@@ -321,29 +320,8 @@ svg {
   padding: 0 0 56px 0;
   border-bottom: 1px solid #f2f2f2;
 
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    height: 13px;
-
-    li {
-      margin: 0 2px 0 2px;
-      display: inline;
-      line-height: 1;
-
-      a {
-        text-decoration: none;
-      }
-    }
-  }
-
-  .pre {
-    float: left;
-  }
-
-  .next {
-    float: right;
+  a {
+    text-decoration: none;
   }
 }
 
@@ -478,7 +456,7 @@ svg {
   a {
     color: #fff;
     align-self: center;
-    
+
     svg {
       vertical-align: -10%;
     }
@@ -540,59 +518,6 @@ a.btn {
 .menu {
   float: right;
   padding-top: 30px;
-
-  .btn-down {
-    margin: 0;
-
-    li {
-      list-style: none;
-      width: 100px;
-
-      a {
-        display: inline-block;
-        position: relative;
-        padding: 0.5em 1.25em;
-        outline: 0;
-        color: rgba(0, 0, 0, 0.44);
-        background: transparent;
-        font-size: 14px;
-        text-align: center;
-        text-decoration: none;
-        cursor: pointer;
-        border: 1px solid rgba(0, 0, 0, 0.15);
-        white-space: nowrap;
-        font-weight: 400;
-        font-style: normal;
-        border-radius: 999em;
-        margin-top: 5px;
-
-        &:hover {
-          position: relative;
-          padding: 0.5em 1.25em;
-          outline: 0;
-          color: #fff;
-          background: #3CBD10;
-          font-size: 14px;
-          text-align: center;
-          text-decoration: none;
-          cursor: pointer;
-          border: 1px solid rgba(0, 0, 0, 0.15);
-          white-space: nowrap;
-          font-weight: 400;
-          font-style: normal;
-          border-radius: 999em;
-          margin-top: 5px;
-        }
-      }
-    }
-
-    div {
-      position: absolute;
-      visibility: hidden;
-      width: 100px;
-      float: right;
-    }
-  }
 }
 
 @media screen and (max-width: 960px) {
