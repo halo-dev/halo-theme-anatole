@@ -1,5 +1,11 @@
 <#include "./module/layout.ftl" />
 <@layout title="搜索结果：${keyword!} - ${blog_title!}">
+    <div class="m-[30px] mt-[15px] border-b border-gray-200 animated fadeInDown">
+        <div class="flex flex-wrap items-baseline">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">搜索：${keyword!}</h3>
+            <p class="ml-2 text-sm text-gray-500 truncate">${posts.totalElements!} 篇文章</p>
+        </div>
+    </div>
     <#if posts?? && posts.content?size gt 0>
         <#include "module/post-entry.ftl">
         <#if posts.totalPages gt 1>
