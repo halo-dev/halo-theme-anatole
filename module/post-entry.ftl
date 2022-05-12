@@ -13,7 +13,7 @@
                 <p></p>
             </div>
         </div>
-        <div class="post-footer">
+        <div class="post-info pb-[30px] border-b border-b-[#f2f2f2]">
             <div class="meta">
                 <div class="info">
                     <i class="iconify w-3 h-3" data-icon="mdi:calendar-month-outline"></i>

@@ -1,11 +1,7 @@
 <#include "./module/layout.ftl" />
+<#include "./module/page-heading.ftl" />
 <@layout title="标签：${tag.name!} - ${blog_title!}">
-    <div class="m-[30px] mt-[15px] border-b border-gray-200 animated fadeInDown">
-        <div class="flex flex-wrap items-baseline">
-            <h3 class="text-lg leading-6 font-medium text-gray-900">标签：${tag.name!}</h3>
-            <p class="ml-2 text-sm text-gray-500 truncate">${posts.totalElements!} 篇文章</p>
-        </div>
-    </div>
+    <@page_heading title="标签：${tag.name!}" subtitle="${posts.totalElements!} 篇文章" />
     <#include "module/post-entry.ftl">
     <#if posts.totalPages gt 1>
         <@paginationTag method="tagPosts" page="${posts.number?c}" total="${posts.totalPages?c}" display="3" slug="${tag.slug!}">

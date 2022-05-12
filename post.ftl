@@ -1,30 +1,28 @@
 <#include "./module/layout.ftl" />
+<#include "./module/page-heading.ftl" />
 <@layout title="${post.title!} - ${blog_title!}">
+    <@page_heading title="${post.title!}" subtitle="">
+        <div class="post-info mt-2">
+            <div class="meta">
+                <div class="info">
+                    <i class="iconify w-3 h-3" data-icon="mdi:calendar-month-outline"></i>
+                    <span class="date">${post.createTime?string("yyyy-MM-dd")}</span>
+                    <i class="iconify w-3 h-3" data-icon="mdi:comment-outline"></i>
+                    <a href="${post.fullPath!}#comment_widget">Comments</a>
+                    <#if tags?size gt 0>
+                        <i class="iconify w-3 h-3" data-icon="mdi:tag"></i>
+                        <#list tags as tag>
+                            <a href="${tag.fullPath!}" class="tag">&nbsp;${tag.name}</a>
+                        </#list>
+                    </#if>
+                </div>
+            </div>
+        </div>
+    </@page_heading>
     <div class="post-page">
         <div class="post animated fadeInDown">
-            <div class="post-title">
-                <h3>
-                    <a>${post.title}</a>
-                </h3>
-            </div>
             <div class="post-content">
                 ${post.formatContent!}
-            </div>
-            <div class="post-footer">
-                <div class="meta">
-                    <div class="info">
-                        <i class="iconify w-3 h-3" data-icon="mdi:calendar-month-outline"></i>
-                        <span class="date">${post.createTime?string("yyyy-MM-dd")}</span>
-                        <i class="iconify w-3 h-3" data-icon="mdi:comment-outline"></i>
-                        <a href="${post.fullPath!}#comment_widget">Comments</a>
-                        <#if tags?size gt 0>
-                            <i class="iconify w-3 h-3" data-icon="mdi:tag"></i>
-                            <#list tags as tag>
-                                <a href="${tag.fullPath!}" class="tag">&nbsp;${tag.name}</a>
-                            </#list>
-                        </#if>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="share inline-flex">
