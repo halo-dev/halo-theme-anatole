@@ -6,7 +6,6 @@ specifiers:
   '@tailwindcss/aspect-ratio': ^0.4.0
   '@types/node': ^16.11.33
   autoprefixer: ^10.4.7
-  github-markdown-css: ^5.1.0
   postcss: ^8.4.13
   rollup-plugin-watch: ^1.0.1
   sass: ^1.51.0
@@ -17,7 +16,6 @@ specifiers:
 
 dependencies:
   '@iconify/iconify': 2.2.1
-  github-markdown-css: 5.1.0
 
 devDependencies:
   '@iconify/json': 2.1.40
@@ -552,10 +550,6 @@ packages:
   /function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
     dev: true
-
-  /github-markdown-css/5.1.0:
-    resolution: {integrity: sha512-QLtORwHHtUHhPMHu7i4GKfP6Vx5CWZn+NKQXe+cBhslY1HEt0CTEkP4d/vSROKV0iIJSpl4UtlQ16AD8C6lMug==}
-    dev: false
 
   /glob-parent/5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}

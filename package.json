@@ -23,7 +23,6 @@
     "vite-plugin-purge-icons": "^0.8.1"
   },
   "dependencies": {
-    "@iconify/iconify": "^2.2.1",
-    "github-markdown-css": "^5.1.0"
+    "@iconify/iconify": "^2.2.1"
   }
 }

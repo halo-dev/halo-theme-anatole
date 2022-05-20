@@ -1,4 +1,4 @@
 import "./css/tailwind.css"
+import "../source/plugins/github-markdown-css/github-markdown-light.css"
 import "./css/style.scss"
-import "github-markdown-css/github-markdown-light.css"
 import '@purge-icons/generated'

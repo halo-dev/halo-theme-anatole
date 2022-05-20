@@ -18,9 +18,28 @@
         <link href="${theme_base!}/dist/style.css" rel="stylesheet">
 
         <#if is_post?? || is_sheet??>
-            <link href="${theme_base!}/source/plugins/prism/themes/prism${settings.code_pretty!''}.css" type="text/css"
-                  rel="stylesheet"/>
-            <script type="text/javascript" src="${theme_base!}/source/plugins/prism/prism.min.js"></script>
+            <link href="${theme_base!}/source/plugins/highlight.js/styles/${settings.highlight_style!'default.min.css'}"
+                  rel="stylesheet">
+            <script src="${theme_base!}/source/plugins/highlight.js/highlight.min.js"></script>
+            <script>
+                const extraLanguages = "${settings.highlight_extra_languages!''}".split(",")
+                extraLanguages.forEach(function (lang) {
+                    loadScript("${theme_base!}/source/plugins/highlight.js/languages/" + lang + ".min.js");
+                });
+                document.addEventListener('DOMContentLoaded', (event) => {
+                    document.querySelectorAll('pre code').forEach((el) => {
+                        hljs.highlightElement(el);
+                    });
+                    console.log("Extra languages: ", extraLanguages)
+                    console.log("Loaded languages: ", hljs.listLanguages())
+                });
+                function loadScript(url) {
+                    const script = document.createElement("script");
+                    script.type = "text/javascript";
+                    script.src = url;
+                    document.getElementsByTagName("head")[0].appendChild(script);
+                }
+            </script>
         </#if>
     </head>
     <body>
