@@ -6,12 +6,7 @@
             </h3>
         </div>
         <div class="post-content">
-            <div class="p_part">
-                <p>${post.summary!}...</p>
-            </div>
-            <div class="p_part">
-                <p></p>
-            </div>
+            <p class="py-2.5">${post.summary!}...</p>
         </div>
         <div class="post-info pb-[30px] border-b border-b-[#f2f2f2]">
             <div class="meta">

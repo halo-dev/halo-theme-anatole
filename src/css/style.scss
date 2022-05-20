@@ -20,13 +20,6 @@ body {
   line-height: 1.6em;
 }
 
-p {
-  line-height: 1.9em;
-  font-weight: 400;
-  font-size: 14px;
-  word-break: break-all;
-}
-
 a {
   text-decoration: none;
 
@@ -54,13 +47,13 @@ svg {
 
 .animated {
   animation-fill-mode: both;
-  animation-duration: 1s;
+  animation-duration: 0.8s;
 }
 
 @keyframes fadeInDown {
   0% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-10px);
   }
 
   100% {
@@ -227,29 +220,6 @@ svg {
       &:hover {
         text-decoration: underline;
       }
-    }
-  }
-
-  .post-content {
-    a {
-      text-decoration: none;
-      letter-spacing: 1px;
-      color: #4786D6;
-
-      &:hover {
-        color: #2F69B3;
-      }
-    }
-
-    h3 {
-      color: #5F5F5F;
-      font-size: 22px;
-      font-weight: 600;
-    }
-
-    h4 {
-      color: #5F5F5F;
-      font-size: 16px;
     }
   }
 }
@@ -566,6 +536,16 @@ a.btn {
 
   .share {
     display: grid;
+  }
+}
+
+.markdown-body {
+  ul, ol {
+    list-style: inherit;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    border: none !important;
   }
 }
 

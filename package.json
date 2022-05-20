@@ -11,6 +11,7 @@
   "repository": "git@github.com:halo-dev/halo-theme-anatole.git",
   "devDependencies": {
     "@iconify/json": "^2.1.40",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
     "@types/node": "^16.11.33",
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.13",
@@ -22,6 +23,7 @@
     "vite-plugin-purge-icons": "^0.8.1"
   },
   "dependencies": {
-    "@iconify/iconify": "^2.2.1"
+    "@iconify/iconify": "^2.2.1",
+    "github-markdown-css": "^5.1.0"
   }
 }
