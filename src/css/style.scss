@@ -20,6 +20,32 @@ body {
   line-height: 1.6em;
 }
 
+* {
+  &::-webkit-scrollbar-track-piece {
+    background-color: #f8f8f8;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #ddd;
+    background-clip: padding-box;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+
+    &:hover {
+      background-color: #bbb;
+    }
+  }
+}
+
 a {
   text-decoration: none;
 
@@ -547,38 +573,12 @@ a.btn {
   h1, h2, h3, h4, h5, h6 {
     border: none !important;
   }
-  
+
   pre {
-    padding: 0!important;
+    padding: 0 !important;
     
     code {
-      border:1px solid #fbf6f6;
-    }
-  }
-}
-
-* {
-  &::-webkit-scrollbar-track-piece {
-    background-color: #f8f8f8;
-    -webkit-border-radius: 2em;
-    -moz-border-radius: 2em;
-    border-radius: 2em;
-  }
-
-  &::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: #ddd;
-    background-clip: padding-box;
-    -webkit-border-radius: 2em;
-    -moz-border-radius: 2em;
-    border-radius: 2em;
-
-    &:hover {
-      background-color: #bbb;
+      border: 1px solid #fbf6f6;
     }
   }
 }

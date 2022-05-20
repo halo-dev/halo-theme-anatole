@@ -18,13 +18,13 @@
         <link href="${theme_base!}/dist/style.css" rel="stylesheet">
 
         <#if is_post?? || is_sheet??>
-            <link href="${theme_base!}/source/plugins/highlight.js/styles/${settings.highlight_style!'default.min.css'}"
+            <link href="${theme_base!}/assets/libs/highlight.js/styles/${settings.highlight_style!'default.min.css'}"
                   rel="stylesheet">
-            <script src="${theme_base!}/source/plugins/highlight.js/highlight.min.js"></script>
+            <script src="${theme_base!}/assets/libs/highlight.js/highlight.min.js"></script>
             <script>
                 const extraLanguages = "${settings.highlight_extra_languages!''}".split(",")
                 extraLanguages.forEach(function (lang) {
-                    loadScript("${theme_base!}/source/plugins/highlight.js/languages/" + lang + ".min.js");
+                    loadScript("${theme_base!}/assets/libs/highlight.js/languages/" + lang + ".min.js");
                 });
                 document.addEventListener('DOMContentLoaded', (event) => {
                     document.querySelectorAll('pre code').forEach((el) => {

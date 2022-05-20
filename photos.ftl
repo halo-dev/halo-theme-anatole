@@ -5,9 +5,9 @@
     <meta charset="utf-8"/>
     <@global.head />
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="${theme_base!}/source/plugins/gallery/css/main.css"/>
+    <link rel="stylesheet" href="${theme_base!}/assets/libs/gallery/css/main.css"/>
     <noscript>
-        <link rel="stylesheet" href="${theme_base!}/plugins/gallery/css/noscript.css"/>
+        <link rel="stylesheet" href="${theme_base!}/libs/gallery/css/noscript.css"/>
     </noscript>
 </head>
 <body class="is-loading-0 is-loading-1 is-loading-2">
@@ -37,9 +37,9 @@
         </ul>
     </footer>
 </div>
-<script src="${theme_base!}/source/js/jquery.min.js"></script>
-<script src="${theme_base!}/source/js/skel.min.js"></script>
-<script src="${theme_base!}/source/plugins/gallery/js/main.js"></script>
+<script src="${theme_base!}/assets/js/jquery.min.js"></script>
+<script src="${theme_base!}/assets/js/skel.min.js"></script>
+<script src="${theme_base!}/assets/libs/gallery/js/main.js"></script>
 <@global.statistics />
 </body>
 </html>

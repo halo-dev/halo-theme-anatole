@@ -18,7 +18,7 @@
 		"make": "npm run make:light && npm run make:dark && npm run make:auto"
 	},
 	"files": [
-		"github-markdown.css",
+      "github-markdown.css",
 		"github-markdown-dark.css",
 		"github-markdown-light.css"
 	],
