@@ -10,7 +10,7 @@
                     <#if links?? && links?size gt 0>
                         <#list links as link>
                             <a href="${link.url}" target="_blank">
-                                <div class="relative rounded border border-gray-300 bg-white px-5 py-4 shadow-sm flex items-center space-x-3 hover:border-gray-400">
+                                <div class="relative rounded border border-gray-300 bg-white px-5 py-4 shadow-sm hover:shadow flex items-center space-x-3 hover:border-gray-400">
                                     <#if link.logo?? && link.logo!=''>
                                         <div class="flex-shrink-0">
                                             <img class="h-12 w-12 rounded-full" src="${link.logo!}" alt="${link.name!}">
