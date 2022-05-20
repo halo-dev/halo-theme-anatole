@@ -15,7 +15,7 @@
     </@page_heading>
     <div class="post-page">
         <div class="post animated fadeInDown">
-            <div class="post-content markdown-body">
+            <div id="post-content" class="post-content markdown-body">
                 ${sheet.formatContent!}
             </div>
         </div>

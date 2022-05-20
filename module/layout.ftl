@@ -33,6 +33,7 @@
                     console.log("Extra languages: ", extraLanguages)
                     console.log("Loaded languages: ", hljs.listLanguages())
                 });
+
                 function loadScript(url) {
                     const script = document.createElement("script");
                     script.type = "text/javascript";
@@ -40,6 +41,10 @@
                     document.getElementsByTagName("head")[0].appendChild(script);
                 }
             </script>
+
+
+            <link href="${theme_base!}/assets/libs/lightgallery.js/css/lightgallery.min.css" rel="stylesheet">
+            <script src="${theme_base!}/assets/libs/lightgallery.js/js/lightgallery.min.js"></script>
         </#if>
     </head>
     <body>
@@ -81,6 +86,21 @@
         xhr.send();
         </#if>
     </script>
+
+    <#if is_post?? || is_sheet??>
+        <script type="text/javascript">
+            const imageNodes = document.querySelectorAll('.post-content img');
+            imageNodes.forEach(function (node) {
+                if (node) {
+                    node.dataset.src = node.src;
+                }
+            })
+
+            lightGallery(document.getElementById('post-content'), {
+                selector: 'img',
+            })
+        </script>
+    </#if>
     <@global.statistics />
     </body>
     </html>
