@@ -3,7 +3,6 @@
 <@layout.extends name="module/layout.ftl">
     <@layout.put block="title">日志 - ${blog_title!}</@layout.put>
     <@layout.put block="head">
-        <script type="text/javascript" src="${theme_base!}/assets/js/alpine.min.js" defer></script>
         <#include "./module/highlightjs/libs-import.ftl" />
         <#include "./module/lightgallery/libs-import.ftl" />
         <#include "./module/katex/libs-import.ftl" />

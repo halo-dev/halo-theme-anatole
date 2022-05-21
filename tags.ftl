@@ -3,7 +3,6 @@
 <@layout.extends name="module/layout.ftl">
     <@layout.put block="title">${blog_title!}</@layout.put>
     <@layout.put block="head">
-        <script type="text/javascript" src="${theme_base!}/assets/js/alpine.min.js"></script>
         <script>
             function handleHighlightTag(tag, highlight) {
                 const targetTag = document.getElementById("tag-" + tag)

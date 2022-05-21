@@ -15,9 +15,10 @@
     <@global.head />
     <#include "./styles.ftl" />
     <link href="${theme_base!}/dist/style.css" rel="stylesheet">
+    <script type="text/javascript" src="${theme_base!}/assets/js/alpine.min.js" async></script>
     <@layout.block name="head"></@layout.block>
 </head>
-<body>
+<body x-data="{ postSearchVisible: false }">
 
 <#include "./sidebar.ftl">
 <div class="main">
@@ -29,5 +30,6 @@
 
 <#include "./scripts.ftl" />
 <@layout.block name="footer"></@layout.block>
+<#include "./post-search-modal.ftl">
 </body>
 </html>
