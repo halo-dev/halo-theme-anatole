@@ -5,7 +5,7 @@
                 <a href="${post.fullPath!}">${post.title}</a>
             </h3>
         </div>
-        <div class="post-content">
+        <div class="post-content text-black/50 text-sm">
             <p class="py-2.5">${post.summary!}...</p>
         </div>
         <div class="post-info pb-[30px] border-b border-b-[#f2f2f2]">
