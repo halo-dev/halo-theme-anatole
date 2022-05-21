@@ -7,4 +7,5 @@ module.exports = {
     plugins: [
         require('@tailwindcss/aspect-ratio'),
     ],
+    safelist: ['animate-bounce']
 }
