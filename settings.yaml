@@ -31,6 +31,17 @@ style:
           label: 开启
         - value: false
           label: 关闭
+    katex:
+      name: katex
+      label: KaTex 公式渲染
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     highlight_extra_languages:
       name: highlight_extra_languages
       label: 文章代码高亮语言

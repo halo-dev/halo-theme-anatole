@@ -23,6 +23,9 @@
             <script src="${theme_base!}/assets/libs/highlight.js/highlight.min.js"></script>
             <link href="${theme_base!}/assets/libs/lightgallery.js/css/lightgallery.min.css" rel="stylesheet">
             <script src="${theme_base!}/assets/libs/lightgallery.js/js/lightgallery.min.js"></script>
+        <#if settings.katex!false>
+        <link href="${theme_base!}/assets/libs/katex/katex.min.css" rel="stylesheet">
+        </#if>
         </#if>
     </head>
     <body>
