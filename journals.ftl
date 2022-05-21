@@ -4,7 +4,9 @@
     <@layout.put block="title">日志 - ${blog_title!}</@layout.put>
     <@layout.put block="head">
         <script type="text/javascript" src="${theme_base!}/assets/js/alpine.min.js" defer></script>
+        <#include "./module/highlightjs/libs-import.ftl" />
         <#include "./module/lightgallery/libs-import.ftl" />
+        <#include "./module/katex/libs-import.ftl" />
     </@layout.put>
     <@layout.put block="content">
         <@page_heading title="日志" subtitle="${journals.totalElements!} 篇" />
@@ -68,6 +70,7 @@
     </@layout.put>
 
     <@layout.put block="footer">
+        <#include "./module/highlightjs/scripts.ftl" />
         <script type="text/javascript">
             const markdownBodyNodes = document.getElementsByClassName('markdown-body');
 
