@@ -9,12 +9,12 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
         <meta name="format-detection" content="telephone=no"/>
         <meta name="renderer" content="webkit"/>
-        <meta name="theme-color" content="${settings.google_color!'#fff'}"/>
         <meta name="author" content="${user.nickname!}"/>
         <meta name="keywords" content="${meta_keywords!}"/>
         <meta name="description" content="${meta_description!}"/>
         <link rel="alternate" type="application/rss+xml" title="atom 1.0" href="${atom_url!}"/>
         <@global.head />
+        <#include "./styles.ftl" />
         <link href="${theme_base!}/dist/style.css" rel="stylesheet">
         <script type="text/javascript" src="${theme_base!}/dist/main.umd.js"></script>
         <#if is_post?? || is_sheet??>
@@ -34,7 +34,7 @@
             <#nested />
         </div>
     </div>
-    
+
     <#include "./scripts.ftl" />
     <@global.statistics />
     </body>

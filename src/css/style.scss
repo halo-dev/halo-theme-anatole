@@ -74,12 +74,10 @@ svg {
 .content {
   height: auto;
   float: right;
-  width: 60%;
   margin-top: 60px;
 }
 
 .page-top {
-  width: 60%;
   position: fixed;
   right: 0;
   z-index: 3;
@@ -133,7 +131,6 @@ svg {
 }
 
 .sidebar {
-  width: 40%;
   -webkit-background-size: cover;
   background-size: cover;
   background-color: #fff;
