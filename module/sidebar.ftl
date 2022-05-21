@@ -8,11 +8,7 @@
                 <a href="${blog_url!}" title="${blog_title!}">${blog_title!}</a>
             </h3>
             <div class="description">
-                <#if settings.hitokoto!false>
-                    <p id="hitokoto">获取中...</p>
-                <#else >
-                    <p>${user.description!}</p>
-                </#if>
+                <p class="description-text">${user.description!}</p>
             </div>
         </div>
     </div>

@@ -75,17 +75,6 @@ style:
           label: 开启
         - value: false
           label: 关闭
-    hitokoto:
-      name: hitokoto
-      label: 博客描述开启一言
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
     google_color:
       name: google_color
       label: 浏览器沉浸颜色
