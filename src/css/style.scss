@@ -364,83 +364,6 @@ svg {
   }
 }
 
-.share {
-  margin: 0 30px;
-  display: inline-flex;
-}
-
-.evernote {
-  width: 32px;
-  height: 32px;
-  border-radius: 300px;
-  background-color: #3E3E3E;
-  margin-right: 5px;
-  display: flex;
-  justify-content: center;
-
-  a {
-    color: #fff;
-    align-self: center;
-
-    svg {
-      vertical-align: -10%;
-    }
-
-    &:hover {
-      color: #ED6243;
-      padding: 11px;
-    }
-  }
-}
-
-.weibo {
-  width: 32px;
-  height: 32px;
-  border-radius: 300px;
-  background-color: #ED6243;
-  margin-right: 5px;
-  display: flex;
-  justify-content: center;
-
-  a {
-    color: #fff;
-    align-self: center;
-
-    svg {
-      vertical-align: -10%;
-    }
-
-    &:hover {
-      color: #BD4226;
-    }
-  }
-}
-
-.twitter {
-  width: 32px;
-  height: 32px;
-  border-radius: 300px;
-  background-color: #59C0FD;
-  margin-right: 5px;
-  display: flex;
-  justify-content: center;
-
-  a {
-    color: #fff;
-    align-self: center;
-
-    svg {
-      vertical-align: -10%;
-    }
-
-    &:hover {
-      color: #4B9ECE;
-    }
-  }
-}
-
-/* 按钮样式 */
-
 a.btn {
   color: #868686;
   font-weight: 400;
@@ -484,8 +407,6 @@ a.btn {
   padding: 0.5em 1.25em;
   line-height: 1.666em;
 }
-
-/* Menu样式 */
 
 .menu {
   float: right;
@@ -531,10 +452,6 @@ a.btn {
 
   .footer {
     display: none;
-  }
-
-  .share {
-    display: grid;
   }
 }
 
