@@ -1,7 +1,7 @@
 <#list posts.content as post>
     <div class="post animated fadeInDown">
         <div class="post-title">
-            <h3>
+            <h3 class="font-medium">
                 <a href="${post.fullPath!}">${post.title}</a>
             </h3>
         </div>
