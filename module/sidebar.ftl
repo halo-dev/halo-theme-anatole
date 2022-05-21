@@ -15,13 +15,12 @@
     <#include "social-list.ftl">
     <div class="footer">
         <a target="_blank" href="#">
-            <span>Designed by </span>
-            <a href="https://www.caicai.me">CaiCai</a>
+            <a href="https://www.caicai.me">Designed by CaiCai</a>
             <div class="by_halo">
-                <a href="https://halo.run" target="_blank">Proudly published with Halo&#65281;</a>
+                <a href="https://halo.run" target="_blank">Proudly published with Halo</a>
             </div>
             <div class="footer_text">
-                <@global.footer_info />
+                <@global.footer />
             </div>
         </a>
     </div>
