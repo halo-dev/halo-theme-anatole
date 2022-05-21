@@ -14,7 +14,7 @@
             <div class="post animated fadeInDown">
                 <ul role="list" class="divide-y divide-gray-100">
                     <#list journals.content as journal>
-                        <li class="py-5 flex items-start" x-data="{ comment: false }">
+                        <li class="py-5 flex items-start gap-2" x-data="{ comment: false }">
                             <img class="h-12 w-12 rounded-full" src="${user.avatar!}" alt="${user.nickname!}">
                             <div class="ml-5 flex-1">
                                 <div class="markdown-body !text-sm !text-gray-500">
