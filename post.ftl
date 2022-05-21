@@ -8,11 +8,17 @@
                     <i class="iconify w-3 h-3" data-icon="mdi:calendar-month-outline"></i>
                     <span class="date">${post.createTime?string("yyyy-MM-dd")}</span>
                     <i class="iconify w-3 h-3" data-icon="mdi:comment-outline"></i>
-                    <a href="${post.fullPath!}#comment_widget">Comments</a>
+                    <a href="${post.fullPath!}#comment_widget">${post.commentCount!}</a>
+                    <#if post.categories?size gt 0>
+                        <i class="iconify w-3 h-3" data-icon="mdi:folder-outline"></i>
+                        <#list post.categories as category>
+                            <a href="${category.fullPath}" title="${category.name!}">${category.name}</a>
+                        </#list>
+                    </#if>
                     <#if tags?size gt 0>
                         <i class="iconify w-3 h-3" data-icon="mdi:tag"></i>
                         <#list tags as tag>
-                            <a href="${tag.fullPath!}" class="tag">&nbsp;${tag.name}</a>
+                            <a href="${tag.fullPath!}" title="${tag.name}">${tag.name}</a>
                         </#list>
                     </#if>
                 </div>

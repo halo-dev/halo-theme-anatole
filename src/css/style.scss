@@ -245,35 +245,6 @@ svg {
       vertical-align: -7%;
     }
   }
-
-  .tags {
-    padding-bottom: 15px;
-    font-size: 13px;
-
-    ul {
-      list-style-type: none;
-      display: inline;
-      margin: 0;
-      padding: 0;
-
-      li {
-        list-style-type: none;
-        margin: 0;
-        padding-right: 5px;
-        display: inline;
-      }
-    }
-
-    a {
-      text-decoration: none;
-      color: rgba(0, 0, 0, 0.44);
-      font-weight: 400;
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
-  }
 }
 
 .pagination {
