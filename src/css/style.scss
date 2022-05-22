@@ -266,7 +266,6 @@ svg {
   position: absolute;
   width: 100%;
   padding-bottom: 20px;
-  background: #fff;
 
   a {
     color: #A6A6A6;
@@ -375,6 +374,7 @@ a.btn {
     position: absolute;
     border-right: none;
     z-index: 1;
+    height: 420px;
 
     .logo-title {
       padding-top: 120px;
@@ -422,7 +422,7 @@ a.btn {
 
   pre {
     padding: 0 !important;
-    
+
     code {
       border: 1px solid #fbf6f6;
     }

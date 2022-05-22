@@ -16,6 +16,11 @@ style:
           label: '40%'
         - value: '50%'
           label: '50%'
+    sidebar_background:
+      name: sidebar_background
+      label: 侧边栏背景图
+      type: attachment
+      data-type: string
     icon:
       name: icon
       label: 右上角图标

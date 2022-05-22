@@ -126,8 +126,6 @@
                     <span>没有搜索到相关文章</span>
                 </div>
             </div>
-            <div class="modal-footer border-t px-[16px] py-[12px]">
-            </div>
         </div>
     </div>
 </div>
