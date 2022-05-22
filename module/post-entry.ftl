@@ -12,9 +12,13 @@
             <div class="meta">
                 <div class="info">
                     <i class="iconify w-3 h-3" data-icon="mdi:calendar-month-outline"></i>
-                    <span class="date">${post.createTime?string("yyyy-MM-dd")}</span>
+                    <span>${post.createTime?string("yyyy-MM-dd")}</span>
+                    <i class="iconify w-3 h-3" data-icon="mdi:eye"></i>
+                    <span>${post.visits!0}</span>
                     <i class="iconify w-3 h-3" data-icon="mdi:comment-outline"></i>
                     <a href="${post.fullPath!}#comment_widget">${post.commentCount!}</a>
+                    <i class="iconify w-3 h-3" data-icon="mdi:heart-outline"></i>
+                    <span>${post.likes!}</span>
                     <#if post.categories?size gt 0>
                         <i class="iconify w-3 h-3" data-icon="mdi:folder-outline"></i>
                         <#list post.categories as category>
