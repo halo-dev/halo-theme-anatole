@@ -1,9 +1,10 @@
 <div
         x-show="postSearchVisible"
         aria-modal="true"
-        class="modal-wrapper fixed top-0 left-0 w-full h-full flex flex-row items-center justify-center z-[9999999999]"
+        class="fixed top-0 left-0 w-full h-full flex flex-row items-center justify-center z-[9999999999]"
         role="dialog"
         tabindex="0"
+        style="display: none;"
         @keyup.esc="postSearchVisible = false"
         x-data="{
             keyword: '',
@@ -57,7 +58,7 @@
             x-transition:leave-start="opacity-100"
             x-transition:leave-end="opacity-0"
     >
-        <div class="modal-layer flex-none absolute top-0 left-0 w-full h-full transition-opacity bg-gray-500 bg-opacity-75"
+        <div class="flex-none absolute top-0 left-0 w-full h-full transition-opacity bg-gray-500 bg-opacity-75"
              x-on:click="postSearchVisible = false"/>
     </div>
     <div
@@ -69,22 +70,22 @@
             x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
             x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
     >
-        <div class="modal-content flex flex-col relative bg-white items-stretch shadow-xl transform transition-all max-w-3xl rounded"
+        <div class="flex flex-col relative bg-white items-stretch shadow-xl transform transition-all max-w-3xl rounded"
              style="width: calc(100vw - 20px);max-height: calc(100vh - 20px);"
         >
-            <div class="modal-header flex justify-between border-b">
+            <div class="flex justify-between border-b">
                 <div class="modal-header-title self-center text-base font-bold px-[16px] py-[12px] flex items-center">
-                    <span class="mr-2">搜索</span> <i x-show="searching" class="iconify w-4 h-4 animate-spin"
-                                                    data-icon="mdi:loading"></i>
+                    <span class="mr-2">搜索</span>
+                    <i x-show="searching" class="iconify w-4 h-4 animate-spin" data-icon="mdi:loading"></i>
                 </div>
-                <div class="modal-header-actions flex flex-row self-center h-full">
-                    <div class="modal-header-action flex items-center justify-center cursor-pointer bg-gray-50 hover:bg-gray-200 mx-[16px] w-8 h-8 rounded-full"
+                <div class="flex flex-row self-center h-full">
+                    <div class="flex items-center justify-center cursor-pointer bg-gray-50 hover:bg-gray-200 mx-[16px] w-8 h-8 rounded-full"
                          x-on:click="postSearchVisible = false">
                         <i class="iconify w-4 h-4" data-icon="mdi:close"></i>
                     </div>
                 </div>
             </div>
-            <div class="modal-body overflow-x-hidden overflow-y-auto flex-1 break-word px-[16px] py-[12px]">
+            <div class="overflow-x-hidden overflow-y-auto flex-1 break-word px-[16px] py-[12px]">
                 <div>
                     <input type="text"
                            x-model="keyword"
