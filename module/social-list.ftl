@@ -1,4 +1,4 @@
-<ul class="social-links">
+<ul class="social-links mt-1">
 
     <#if settings.rss!true>
         <li>

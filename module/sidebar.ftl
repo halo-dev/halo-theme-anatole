@@ -4,10 +4,10 @@
             <img alt="Logo" class="inline-block"
                  src="<#if blog_logo?? && blog_logo!=''>${blog_logo!}<#else>${user.avatar!}</#if>"
                  style="width:127px;<#if settings.avatar_circle!true>border-radius:50%</#if>"/>
-            <h3 class="!mt-2 !mb-0">
+            <h3 class="!mt-3 !mb-0">
                 <a href="${blog_url!}" title="${blog_title!}">${blog_title!}</a>
             </h3>
-            <div class="description">
+            <div class="description mt-2">
                 <p class="description-text">${user.description!}</p>
             </div>
         </div>
