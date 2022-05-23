@@ -4,10 +4,11 @@ import "./css/style.scss"
 import '@purge-icons/generated'
 
 document.addEventListener("DOMContentLoaded", () => {
+
     const href = location.href; // http://localhost:8090/
     const pathname = location.pathname; // /
     const origin = location.origin; // http://localhost:8090
-    const menuNodes = document.querySelectorAll(".nav li a")
+    const menuNodes = document.querySelectorAll(".nav .nav-item a")
 
     const menuNodesArray = Array.from(menuNodes)
 
@@ -16,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     if (homeMenu) {
-        homeMenu.classList.add("current")
+        homeMenu.parentElement?.classList.add("current")
         return
     }
 
@@ -29,8 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if ([href, pathname].includes(currentHref)) {
             console.log(node)
-            node.classList.add("current")
+            node.parentElement?.classList.add("current")
             return
         }
     })
 })
+
