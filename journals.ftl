@@ -6,6 +6,8 @@
         <#include "./module/highlightjs/libs-import.ftl" />
         <#include "./module/lightgallery/libs-import.ftl" />
         <#include "./module/katex/libs-import.ftl" />
+        <script src="${theme_base!}/assets/js/vue.min.js"></script>
+        <script src="${options.comment_internal_plugin_js!'//cdn.jsdelivr.net/gh/halo-dev/halo-comment@latest/dist/halo-comment.min.js'}"></script>
     </@layout.put>
     <@layout.put block="content">
         <@page_heading title="日志" subtitle="${journals.totalElements!} 篇" />
