@@ -6,48 +6,7 @@
         tabindex="0"
         style="display: none;"
         @keyup.esc="postSearchVisible = false"
-        x-data="{
-            keyword: '',
-            posts: [],
-            searching: false,
-            async handleSearch() {
-            
-                if(!this.keyword) {
-                    this.posts = [];
-                    return;
-                }
-            
-                this.searching = true;
-               
-                var xhr = new window.XMLHttpRequest();
-                xhr.responseType = 'document';
-                
-                const _this = this
-                xhr.addEventListener('load', function() {
-                    
-                    const nodes = xhr.response.getElementsByClassName('post');
-                
-                    if(nodes) {
-                        _this.posts = Array.from(nodes).map(node => {
-                            const title = node.querySelector('.post-title h3 a').innerText
-                            const url = node.querySelector('.post-title h3 a').href
-                            const content = node.querySelector('.post-content p').innerText
-                            return {
-                                title,
-                                url,
-                                content,
-                            }
-                        })
-                        setTimeout(() => {
-                            _this.searching = false
-                        }, 200)
-                    }
-                });
-        
-                xhr.open('GET', '/search?keyword='+this.keyword);
-                xhr.send(null);
-            }
-        }"
+        x-data="search"
 >
     <div
             x-show="postSearchVisible"
@@ -130,3 +89,51 @@
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('search', () => (
+            {
+                keyword: '',
+                posts: [],
+                searching: false,
+                async handleSearch() {
+
+                    if (!this.keyword) {
+                        this.posts = [];
+                        return;
+                    }
+
+                    this.searching = true;
+
+                    const xhr = new window.XMLHttpRequest();
+                    xhr.responseType = 'document';
+
+                    const _this = this
+                    xhr.addEventListener('load', function () {
+
+                        const nodes = xhr.response.getElementsByClassName('post');
+
+                        if (nodes) {
+                            _this.posts = Array.from(nodes).map(node => {
+                                const title = node.querySelector('.post-title h3 a').innerText
+                                const url = node.querySelector('.post-title h3 a').href
+                                const content = node.querySelector('.post-content p').innerText
+                                return {
+                                    title,
+                                    url,
+                                    content,
+                                }
+                            })
+                            setTimeout(() => {
+                                _this.searching = false
+                            }, 200)
+                        }
+                    });
+
+                    xhr.open('GET', '/search?keyword=' + this.keyword);
+                    xhr.send(null);
+                }
+            }
+        ))
+    })
+</script>
