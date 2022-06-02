@@ -13,20 +13,25 @@
         <@page_heading title="日志" subtitle="${journals.totalElements!} 篇" />
         <div class="post-page">
             <div class="post animated fadeInDown">
-                <ul role="list" class="divide-y divide-gray-100">
+                <ul role="list" class="divide-y divide-gray-100" x-data="journals">
                     <#list journals.content as journal>
-                        <li class="py-5 flex items-start gap-2" x-data="{ comment: false }">
+                        <li class="py-5 flex items-start gap-2" x-data="{comment:false}">
                             <img class="h-12 w-12 rounded-full" src="${user.avatar!}" alt="${user.nickname!}">
                             <div class="ml-5 flex-1">
                                 <div class="markdown-body !text-sm !text-gray-500">
                                     ${journal.content!}
                                 </div>
                                 <div class="flex items-center gap-4 mt-3">
-                                    <div class="inline-flex items-center cursor-pointer text-gray-400 hover:text-black text-sm transition-all">
-                                        <i class="iconify w-3.5 3.5" data-icon="mdi:heart-outline"></i>
-                                        <span class="ml-1">
-                                         ${journal.likes!0}
-                                    </span>
+                                    <div class="journal-likes inline-flex items-center cursor-pointer text-gray-400 hover:text-red-700 text-sm transition-all"
+                                         x-bind:class="{'text-red-700': liked(${journal.id?c})}"
+                                         x-on:click="handleLike(${journal.id?c})">
+                                        <i x-show="liked(${journal.id?c})" class="iconify w-3.5 3.5"
+                                           data-icon="mdi:heart"></i>
+                                        <i x-show="!liked(${journal.id?c})" class="iconify w-3.5 3.5"
+                                           data-icon="mdi:heart-outline"></i>
+                                        <span class="ml-1" data-journal-id-likes="${journal.id?c}">
+                                            ${journal.likes?c}
+                                        </span>
                                     </div>
                                     <div class="inline-flex items-center cursor-pointer text-gray-400 hover:text-black text-sm transition-all"
                                          x-on:click="comment = !comment">
@@ -91,6 +96,40 @@
                     })
                 }
             }
+
+            document.addEventListener("alpine:init", () => {
+                Alpine.data("journals", () => ({
+                    likedIds: [],
+                    init() {
+                        this.likedIds = JSON.parse(localStorage.getItem("anatole.likes.journal.ids") || "[]");
+                    },
+                    liked(id) {
+                        return this.likedIds.includes(id);
+                    },
+                    async handleLike(journalId) {
+                        if (this.liked(journalId)) {
+                            return
+                        }
+
+                        const xhr = new XMLHttpRequest();
+
+                        xhr.open('POST', "/api/content/journals/" + journalId + "/likes");
+
+                        xhr.onload = () => {
+                            this.likedIds = [...this.likedIds, journalId];
+                            localStorage.setItem('anatole.likes.journal.ids', JSON.stringify(this.likedIds));
+
+                            const likesNode = document.querySelector("[data-journal-id-likes=\"" + journalId + "\"]");
+                            const likes = parseInt(likesNode.innerText);
+                            likesNode.innerText = likes + 1;
+                        }
+                        xhr.onerror = function () {
+                            alert("网络请求失败，请稍后再试");
+                        };
+                        xhr.send();
+                    }
+                }))
+            })
         </script>
     </@layout.put>
 </@layout.extends>
