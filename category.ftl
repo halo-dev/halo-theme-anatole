@@ -3,7 +3,9 @@
     <@layout.put block="title">分类：${category.name!} - ${blog_title!}</@layout.put>
     <@layout.put block="content">
         <@page_heading title="分类：${category.name!}" subtitle="${posts.totalElements!} 篇文章" />
-        <#include "module/post-entry.ftl">
+        <div x-data="posts">
+            <#include "module/post-entry.ftl">
+        </div>
         <#if posts.totalPages gt 1>
             <@paginationTag method="categoryPosts" page="${posts.number?c}" total="${posts.totalPages?c}" display="3" slug="${category.slug!}">
                 <div class="pagination flex justify-between items-center">
@@ -17,5 +19,8 @@
                 </div>
             </@paginationTag>
         </#if>
+    </@layout.put>
+    <@layout.put block="footer">
+        <#include "./module/post-likes/scripts.ftl" />
     </@layout.put>
 </@layout.extends>

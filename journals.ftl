@@ -25,9 +25,9 @@
                                     <div class="journal-likes inline-flex items-center cursor-pointer text-gray-400 hover:text-red-700 text-sm transition-all"
                                          x-bind:class="{'text-red-700': liked(${journal.id?c})}"
                                          x-on:click="handleLike(${journal.id?c})">
-                                        <i x-show="liked(${journal.id?c})" class="iconify w-3.5 3.5"
+                                        <i x-show="liked(${journal.id?c})" class="iconify w-3.5 h-3.5"
                                            data-icon="mdi:heart"></i>
-                                        <i x-show="!liked(${journal.id?c})" class="iconify w-3.5 3.5"
+                                        <i x-show="!liked(${journal.id?c})" class="iconify w-3.5 h-3.5"
                                            data-icon="mdi:heart-outline"></i>
                                         <span class="ml-1" data-journal-id-likes="${journal.id?c}">
                                             ${journal.likes?c}

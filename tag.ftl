@@ -4,7 +4,9 @@
     <@layout.put block="title">标签：${tag.name!} - ${blog_title!}</@layout.put>
     <@layout.put block="content">
         <@page_heading title="标签：${tag.name!}" subtitle="${posts.totalElements!} 篇文章" />
-        <#include "module/post-entry.ftl">
+        <div x-data="posts">
+            <#include "module/post-entry.ftl">
+        </div>
         <#if posts.totalPages gt 1>
             <@paginationTag method="tagPosts" page="${posts.number?c}" total="${posts.totalPages?c}" display="3" slug="${tag.slug!}">
                 <div class="pagination flex justify-between items-center">
@@ -18,5 +20,8 @@
                 </div>
             </@paginationTag>
         </#if>
+    </@layout.put>
+    <@layout.put block="footer">
+        <#include "./module/post-likes/scripts.ftl" />
     </@layout.put>
 </@layout.extends>

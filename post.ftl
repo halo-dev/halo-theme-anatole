@@ -11,7 +11,7 @@
     </@layout.put>
     <@layout.put block="content">
         <@page_heading title="${post.title!}" subtitle="">
-            <div class="post-info mt-2">
+            <div class="post-info mt-2" x-data="posts">
                 <div class="meta">
                     <div class="info">
                         <i class="iconify w-3 h-3" data-icon="mdi:calendar-month-outline"></i>
@@ -20,8 +20,15 @@
                         <span>${post.visits!0}</span>
                         <i class="iconify w-3 h-3" data-icon="mdi:comment-outline"></i>
                         <a href="${post.fullPath!}#comment_widget">${post.commentCount!}</a>
-                        <i class="iconify w-3 h-3" data-icon="mdi:heart-outline"></i>
-                        <span>${post.likes!}</span>
+                        <div class="inline-block hover:text-red-700 cursor-pointer"
+                             x-bind:class="{'text-red-700': liked(${post.id?c})}"
+                             x-on:click="handleLike(${post.id?c})">
+                            <i x-show="liked(${post.id?c})" class="iconify w-3 h-3"
+                               data-icon="mdi:heart"></i>
+                            <i x-show="!liked(${post.id?c})" class="iconify w-3 h-3"
+                               data-icon="mdi:heart-outline"></i>
+                            <span data-post-id-likes="${post.id?c}">${post.likes!}</span>
+                        </div>
                         <#if post.categories?size gt 0>
                             <i class="iconify w-3 h-3" data-icon="mdi:folder-outline"></i>
                             <#list post.categories as category>
@@ -64,5 +71,6 @@
     <@layout.put block="footer">
         <#include "./module/highlightjs/scripts.ftl" />
         <#include "./module/lightgallery/scripts.ftl" />
+        <#include "./module/post-likes/scripts.ftl" />
     </@layout.put>
 </@layout.extends>

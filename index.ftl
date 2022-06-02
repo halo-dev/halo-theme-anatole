@@ -1,7 +1,9 @@
 <@layout.extends name="module/layout.ftl">
     <@layout.put block="title">${blog_title!}</@layout.put>
     <@layout.put block="content">
-        <#include "module/post-entry.ftl">
+        <div x-data="posts">
+            <#include "module/post-entry.ftl">
+        </div>
         <#if posts.totalPages gt 1>
             <@paginationTag method="index" page="${posts.number?c}" total="${posts.totalPages?c}" display="3">
                 <div class="pagination flex justify-between items-center">
@@ -15,5 +17,8 @@
                 </div>
             </@paginationTag>
         </#if>
+    </@layout.put>
+    <@layout.put block="footer">
+        <#include "./module/post-likes/scripts.ftl" />
     </@layout.put>
 </@layout.extends>

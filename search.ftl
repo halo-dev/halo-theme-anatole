@@ -4,7 +4,9 @@
     <@layout.put block="content">
         <@page_heading title="搜索：${keyword!}" subtitle="${posts.totalElements!} 篇文章" />
         <#if posts?? && posts.content?size gt 0>
-            <#include "module/post-entry.ftl">
+            <div x-data="posts">
+                <#include "module/post-entry.ftl">
+            </div>
             <#if posts.totalPages gt 1>
                 <@paginationTag method="search" page="${posts.number?c}" total="${posts.totalPages?c}" display="3" keyword="${keyword!}">
                     <div class="pagination flex justify-between items-center">
@@ -23,5 +25,8 @@
                 <h3 class="page-title">没有找到任何东西！</h3>
             </div>
         </#if>
+    </@layout.put>
+    <@layout.put block="footer">
+        <#include "./module/post-likes/scripts.ftl" />
     </@layout.put>
 </@layout.extends>
