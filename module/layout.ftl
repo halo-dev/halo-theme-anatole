@@ -14,7 +14,7 @@
     <link rel="alternate" type="application/rss+xml" title="atom 1.0" href="${atom_url!}"/>
     <@global.head />
     <#include "./styles.ftl" />
-    <link href="${theme_base!}/dist/style.css" rel="stylesheet">
+    <link href="${theme_base!}/dist/style.css?version=${theme.version!}" rel="stylesheet">
     <script type="text/javascript" src="${theme_base!}/assets/js/alpine.min.js" defer></script>
     <@layout.block name="head"></@layout.block>
 </head>
