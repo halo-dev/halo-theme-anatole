@@ -13,6 +13,7 @@
     "@iconify/json": "^2.1.47",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.5.2",
+    "@types/alpinejs": "^3.7.0",
     "@types/node": "^16.11.36",
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.14",
@@ -24,6 +25,7 @@
     "vite-plugin-purge-icons": "^0.8.1"
   },
   "dependencies": {
-    "@iconify/iconify": "^2.2.1"
+    "@iconify/iconify": "^2.2.1",
+    "alpinejs": "^3.10.2"
   }
 }

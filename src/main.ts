@@ -3,6 +3,14 @@ import "./libs/github-markdown-css/github-markdown-light.css"
 import "./css/style.scss"
 import '@purge-icons/generated'
 
+import Alpine from 'alpinejs'
+
+// @ts-ignore
+window.Alpine = Alpine
+
+Alpine.start()
+
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const href = location.href; // http://localhost:8090/

@@ -15,7 +15,7 @@ export default defineConfig({
             entry: path.resolve(__dirname, "src/main.ts"),
             name: "main",
             fileName: "main",
-            formats: ["umd"],
+            formats: ["iife"],
         },
     },
 });
