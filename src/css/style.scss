@@ -384,10 +384,14 @@ a.btn {
 }
 
 .markdown-body {
-  ul, ol {
-    list-style: inherit;
+  ul {
+    list-style: disc;
   }
-
+  
+  ol {
+    list-style: decimal;
+  }
+  
   h1, h2, h3, h4, h5, h6 {
     border: none !important;
   }
