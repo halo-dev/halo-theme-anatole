@@ -1,31 +1,55 @@
 {
   "name": "@halo-dev/halo-theme-anatole",
-  "version": "1.2.0",
-  "description": "Default theme for Halo",
+  "version": "2.0.0",
+  "description": "Anatole theme of Halo",
   "scripts": {
     "dev": "vite build --watch",
-    "build": "vite build"
+    "build": "tsc && vite build",
+    "lint": "eslint ./src --ext .js,.cjs,.mjs,.ts,.cts,.mts --ignore-path .gitignore",
+    "prettier": "prettier --write './src/**/*.{js,ts,css,json,ml,yaml,html}' './templates/**/*.html'"
   },
-  "author": "@halo-dev",
-  "license": "ISC",
-  "repository": "git@github.com:halo-dev/halo-theme-anatole.git",
+  "homepage": "https://github.com/halo-dev/halo-theme-anatole#readme",
+  "bugs": {
+    "url": "https://github.com/halo-dev/halo-theme-anatole/issues"
+  },
+  "author": {
+    "name": "Halo OSS Organization",
+    "url": "https://github.com/halo-dev",
+    "email": "hi@halo.run"
+  },
+  "maintainers": [
+    {
+      "name": "Ryan Wang",
+      "url": "https://github.com/ruibaby",
+      "email": "i@ryanc.cc"
+    }
+  ],
+  "license": "GPL-3.0",
+  "repository": {
+    "url": "https://github.com/halo-dev/halo-theme-anatole",
+    "type": "git"
+  },
   "devDependencies": {
-    "@iconify/json": "^2.1.106",
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/forms": "^0.5.3",
-    "@types/alpinejs": "^3.7.0",
-    "@types/node": "^16.11.58",
-    "autoprefixer": "^10.4.9",
-    "postcss": "^8.4.16",
-    "rollup-plugin-watch": "^1.0.1",
-    "sass": "^1.54.9",
-    "tailwindcss": "^3.1.8",
-    "typescript": "^4.8.3",
-    "vite": "^2.9.15",
-    "vite-plugin-purge-icons": "^0.8.2"
+    "@iconify-json/tabler": "^1.1.47",
+    "@tailwindcss/typography": "^0.5.8",
+    "@types/alpinejs": "^3.7.1",
+    "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
+    "autoprefixer": "^10.4.13",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "postcss": "^8.4.19",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "sass": "^1.58.0",
+    "tailwindcss": "^3.2.4",
+    "tailwindcss-plugin-icons": "^2.0.7",
+    "typescript": "^4.9.3",
+    "vite": "^3.2.4"
   },
   "dependencies": {
-    "@iconify/iconify": "^2.2.1",
-    "alpinejs": "^3.10.3"
+    "alpinejs": "^3.10.5"
   }
 }
