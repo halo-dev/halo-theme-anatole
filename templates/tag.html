@@ -1,4 +1,4 @@
-<#include "./module/page-heading.ftl" />
+<!-- <#include "./module/page-heading.ftl" />
 
 <@layout.extends name="module/layout.ftl">
     <@layout.put block="title">标签：${tag.name!} - ${blog_title!}</@layout.put>
@@ -24,4 +24,31 @@
     <@layout.put block="footer">
         <#include "./module/post-likes/scripts.ftl" />
     </@layout.put>
-</@layout.extends>
+</@layout.extends> -->
+
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{module/layout :: html(title = '标签：' + ${tag.spec.displayName} + ' - ' + ${site.title}, content = ~{::content})}"
+>
+  <th:block th:fragment="content">
+    <th:block
+      th:replace="~{module/page-heading :: html(title = |标签：${tag.spec.displayName}|, subtitle=|${tag.postCount} 篇文章|, nested = null)}"
+    ></th:block>
+    <div th:with="postItems=${posts.items}" x-data="posts">
+      <th:block th:replace="~{module/post-entry}" />
+    </div>
+    <div th:if="${posts.hasPrevious() || posts.hasNext()}" class="pagination flex items-center justify-between">
+      <a th:if="${posts.hasPrevious()}" class="btn w-20" role="navigation" th:href="@{${posts.prevUrl}}" title="上一页">
+        上一页
+      </a>
+      <span class="text-sm" th:text="|${posts.page} / ${posts.totalPages}|"></span>
+      <a th:if="${posts.hasNext()}" class="btn w-20" role="navigation" th:href="@{${posts.nextUrl}}" title="下一页">
+        下一页
+      </a>
+    </div>
+    <!-- <@layout.put block="footer">
+        <#include "./module/post-likes/scripts.ftl" />
+    </@layout.put> -->
+  </th:block>
+</html>

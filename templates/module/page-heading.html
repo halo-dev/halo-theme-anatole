@@ -4,7 +4,7 @@
       <h3 class="text-xl font-medium leading-6 text-gray-900" th:text="${title}"></h3>
       <span th:if="${not #strings.isEmpty(subtitle)}" class="ml-2 text-sm text-gray-500"></span>
     </div>
-    <div>
+    <div th:if="${nested != null}">
       <th:block th:replace="${nested}" />
     </div>
   </div>

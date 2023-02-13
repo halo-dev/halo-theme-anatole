@@ -23,7 +23,7 @@
         >
           <i x-show="liked(${post.id?c})" class="iconify h-3 w-3" data-icon="mdi:heart"></i>
           <i x-show="!liked(${post.id?c})" class="iconify h-3 w-3" data-icon="mdi:heart-outline"></i>
-          <span data-post-id-likes="${post.id?c}">${post.likes!}</span>
+          <span data-post-id-likes="${post.id?c}" >${post.likes!}</span>
         </div>
         <th:block th:if="${not #lists.isEmpty(post.categories)}" class="inline-block">
           <i class="i-mdi-folder-outline h-3 w-3"></i>
