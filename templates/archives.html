@@ -4,9 +4,7 @@
   th:replace="~{module/layout :: html(title = '归档 - ' + ${site.title}, content = ~{::content})}"
 >
   <th:block th:fragment="content">
-    <th:block
-      th:replace="~{module/page-heading :: html(title = '归档', subtitle='', nested = null)}"
-    ></th:block>
+    <th:block th:replace="~{module/page-heading :: html(title = '归档', subtitle='', nested = null)}"></th:block>
     <div class="archive animated fadeInDown">
       <ul class="list-with-title">
         <th:block th:each="archive : ${archives.items}">

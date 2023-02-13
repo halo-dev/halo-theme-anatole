@@ -1,7 +1,6 @@
 <style th:inline="css">
-
   .sidebar {
-    width: /*[(${theme.config.style?.sidebar_width})]*/;
+    width: /*[(${theme.config.style?.sidebar_width})]*/ ;
   }
 
   .page-top {
@@ -11,7 +10,6 @@
   .content {
     width: calc(100% - [(${theme.config.style?.sidebar_width})]);
   }
-
 
   /* <#if settings.sidebar_background?? && settings.sidebar_background!=''>
   .sidebar {
