@@ -15,7 +15,6 @@
               <span th:text="${post.stats.visit}"></span>
               <i class="i-mdi-comment-outline h-3 w-3"></i>
               <a href="#comment_widget" th:text="${post.stats.comment}">0</a>
-              <!-- TODO -->
               <div
                 class="inline-block cursor-pointer hover:text-red-700"
                 x-bind:class="{'text-red-700': upvoted(name)}"
