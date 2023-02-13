@@ -1,4 +1,4 @@
-<div th:each="post : ${postItems}" class="post animated fadeInDown">
+<div th:each="post : ${postItems}" th:attr="x-data=|{name:'${post.metadata.name}'}|" class="post animated fadeInDown">
   <div class="post-title">
     <h3 class="font-medium">
       <a th:href="@{${post.status.permalink}}" th:text="${post.spec.title}"></a>
@@ -18,12 +18,12 @@
         <a th:href="@{${post.status.permalink}}" th:text="${post.stats.comment}">${post.commentCount!}</a>
         <div
           class="inline-block cursor-pointer hover:text-red-700"
-          x-bind:class="{'text-red-700': liked(${post.id?c})}"
-          x-on:click="handleLike(${post.id?c})"
+          x-bind:class="{'text-red-700': upvoted(name)}"
+          @click="handleUpvote(name)"
         >
-          <i x-show="liked(${post.id?c})" class="iconify h-3 w-3" data-icon="mdi:heart"></i>
-          <i x-show="!liked(${post.id?c})" class="iconify h-3 w-3" data-icon="mdi:heart-outline"></i>
-          <span data-post-id-likes="${post.id?c}" >${post.likes!}</span>
+          <i x-show="upvoted(name)" class="i-mdi-heart h-3 w-3"></i>
+          <i x-show="!upvoted(name)" class="i-mdi-heart-outline h-3 w-3"></i>
+          <span th:attr="data-upvote-post-name=${post.metadata.name}" th:text="${post.stats.upvote}">0</span>
         </div>
         <th:block th:if="${not #lists.isEmpty(post.categories)}" class="inline-block">
           <i class="i-mdi-folder-outline h-3 w-3"></i>

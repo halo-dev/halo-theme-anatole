@@ -18,9 +18,6 @@
             </@paginationTag>
         </#if>
     </@layout.put>
-    <@layout.put block="footer">
-        <#include "./module/post-likes/scripts.ftl" />
-    </@layout.put>
 </@layout.extends> -->
 
 <!DOCTYPE html>
@@ -34,13 +31,13 @@
     </div>
 
     <div th:if="${posts.hasPrevious() || posts.hasNext()}" class="pagination flex items-center justify-between">
-      <a th:if="${posts.hasPrevious()}" class="btn w-20" role="navigation" th:href="@{${posts.prevUrl}}" title="上一页"
-        >上一页</a
-      >
+      <a th:if="${posts.hasPrevious()}" class="btn w-20" role="navigation" th:href="@{${posts.prevUrl}}" title="上一页">
+        上一页
+      </a>
       <span class="text-sm" th:text="|${posts.page} / ${posts.totalPages}|"></span>
-      <a th:if="${posts.hasNext()}" class="btn w-20" role="navigation" th:href="@{${posts.nextUrl}}" title="下一页"
-        >下一页</a
-      >
+      <a th:if="${posts.hasNext()}" class="btn w-20" role="navigation" th:href="@{${posts.nextUrl}}" title="下一页">
+        下一页
+      </a>
     </div>
   </th:block>
 </html>

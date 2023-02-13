@@ -44,7 +44,7 @@
               <i class="i-mdi-calendar-month-outline h-3 w-3"></i>
               <span class="date" th:text="${#dates.format(singlePage.spec.publishTime,'yyyy-MM-dd')}"></span>
               <i class="i-mdi-comment-outline h-3 w-3"></i>
-              <a href="#comment_widget">Comments</a>
+              <a href="#comment_widget" th:text="${singlePage.stats.comment}">0</a>
             </div>
           </div>
         </div>

@@ -61,9 +61,6 @@
         </div>
     </@layout.put>
 
-    <@layout.put block="footer">
-        <#include "./module/post-likes/scripts.ftl" />
-    </@layout.put>
 </@layout.extends> -->
 
 <!DOCTYPE html>
@@ -75,7 +72,7 @@
     <th:block th:replace="~{module/page-heading :: html(title = ${post.spec.title},subtitle='', nested = ~{::nested})}">
       <th:block th:fragment="nested">
         <div class="post-info mt-2" x-data="posts">
-          <div class="meta">
+          <div th:attr="x-data=|{name:'${post.metadata.name}'}|" class="meta">
             <div class="info">
               <i class="i-mdi-calendar-month-outline h-3 w-3"></i>
               <span th:text="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}"></span>
@@ -86,12 +83,12 @@
               <!-- TODO -->
               <div
                 class="inline-block cursor-pointer hover:text-red-700"
-                x-bind:class="{'text-red-700': liked(${post.id?c})}"
-                x-on:click="handleLike(${post.id?c})"
+                x-bind:class="{'text-red-700': upvoted(name)}"
+                x-on:click="handleUpvote(name)"
               >
-                <i x-show="liked(${post.id?c})" class="i-mdi-heart h-3 w-3"></i>
-                <i x-show="!liked(${post.id?c})" class="i-mdi-heart-outline h-3 w-3"></i>
-                <span data-post-id-likes="${post.id?c}" th:text="${post.stats.upvote}"></span>
+                <i x-show="upvoted(name)" class="i-mdi-heart h-3 w-3"></i>
+                <i x-show="!upvoted(name)" class="i-mdi-heart-outline h-3 w-3"></i>
+                <span th:attr="data-upvote-post-name=${post.metadata.name}" th:text="${post.stats.upvote}"></span>
               </div>
               <th:block th:if="${not #lists.isEmpty(post.categories)}" class="inline-block">
                 <i class="i-mdi-folder-outline h-3 w-3"></i>
@@ -149,10 +146,5 @@
         <halo:comment group="content.halo.run" kind="Post" th:attr="name=${post.metadata.name}" colorScheme="'light'" />
       </div>
     </div>
-
-    <!-- TODO -->
-    <!-- <@layout.put block="footer">
-        <#include "./module/post-likes/scripts.ftl" />
-    </@layout.put> -->
   </th:block>
 </html>
