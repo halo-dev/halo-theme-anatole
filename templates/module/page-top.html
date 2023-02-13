@@ -15,8 +15,10 @@
     </div>
   </div>
   <div class="information gap-4">
+    <!-- https://github.com/halo-sigs/plugin-search-widget -->
     <div
-      x-on:click="postSearchVisible = true"
+      th:if="${pluginFinder.available('PluginSearchWidget')}"
+      onclick="SearchWidget.open()"
       class="flex h-[32px] w-[32px] cursor-pointer items-center justify-center rounded-full border text-gray-500 transition-all hover:bg-gray-600 hover:text-white"
     >
       <i class="i-mdi-text-box-search h-4 w-4"></i>
