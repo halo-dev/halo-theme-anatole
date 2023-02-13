@@ -30,6 +30,7 @@
     "type": "git"
   },
   "devDependencies": {
+    "@iconify-json/mdi": "^1.1.47",
     "@iconify-json/tabler": "^1.1.47",
     "@tailwindcss/typography": "^0.5.8",
     "@types/alpinejs": "^3.7.1",

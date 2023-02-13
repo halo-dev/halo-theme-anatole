@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@iconify-json/mdi': ^1.1.47
   '@iconify-json/tabler': ^1.1.47
   '@tailwindcss/typography': ^0.5.8
   '@types/alpinejs': ^3.7.1
@@ -25,6 +26,7 @@ dependencies:
   alpinejs: 3.11.1
 
 devDependencies:
+  '@iconify-json/mdi': 1.1.47
   '@iconify-json/tabler': 1.1.58
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.4
   '@types/alpinejs': 3.7.1
@@ -99,6 +101,12 @@ packages:
 
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
+    dev: true
+
+  /@iconify-json/mdi/1.1.47:
+    resolution: {integrity: sha512-5E5mazdQaMNl3gmLL7whteh61weJBRfW2R9Rq0/pgAe9B0j22mViyADm/ooHZx07Vkc0ZqnkgUrpT6OsS9Qhzg==}
+    dependencies:
+      '@iconify/types': 1.1.0
     dev: true
 
   /@iconify-json/tabler/1.1.58:

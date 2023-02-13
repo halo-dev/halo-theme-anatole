@@ -1,21 +1,28 @@
 <div class="page-top animated fadeInDown">
-    <div id="nav"
-         class="nav flex overflow-x-auto flex-1 flex-nowrap whitespace-nowrap ml-[30px] mr-4 items-center text-sm gap-6 h-full">
-        <@menuTag method="list">
-            <#list menus?sort_by('priority') as menu>
-                <div class="nav-item inline-flex items-center h-full text-black/70 hover:text-[#4786D6] relative transition-all">
-                    <a href="${menu.url!}" target="${menu.target!}">${menu.name!} </a>
-                </div>
-            </#list>
-        </@menuTag>
+  <div
+    id="nav"
+    class="nav ml-[30px] mr-4 flex h-full flex-1 flex-nowrap items-center gap-6 overflow-x-auto whitespace-nowrap text-sm"
+  >
+    <div
+      th:each="menuItem : ${menuFinder.getPrimary().menuItems}"
+      class="nav-item relative inline-flex h-full items-center text-black/70 transition-all hover:text-[#4786D6]"
+    >
+      <a
+        th:href="@{${menuItem.status.href}}"
+        th:text="${menuItem.status.displayName}"
+        th:target="${menuItem.spec.target?.value}"
+      ></a>
     </div>
-    <div class="information gap-4">
-        <div x-on:click="postSearchVisible = true"
-             class="rounded-full w-[32px] h-[32px] flex justify-center items-center border hover:bg-gray-600 text-gray-500 hover:text-white transition-all cursor-pointer">
-            <i class="iconify w-4 h-4" data-icon="mdi:text-box-search"></i>
-        </div>
-        <div class="avatar">
-            <img src="${settings.icon!'${user.avatar!}'}" alt="Logo"/>
-        </div>
+  </div>
+  <div class="information gap-4">
+    <div
+      x-on:click="postSearchVisible = true"
+      class="flex h-[32px] w-[32px] cursor-pointer items-center justify-center rounded-full border text-gray-500 transition-all hover:bg-gray-600 hover:text-white"
+    >
+      <i class="i-mdi-text-box-search h-4 w-4"></i>
     </div>
+    <div class="avatar">
+      <img src="${settings.icon!'${user.avatar!}'}" alt="Logo" />
+    </div>
+  </div>
 </div>

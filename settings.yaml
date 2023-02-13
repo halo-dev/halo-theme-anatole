@@ -193,51 +193,42 @@ spec:
               label: xcode.min.css
             - value: xt256.min.css
               label: xt256.min.css
-    - group: sns
+    - group: social_media
       label: 社交资料
       formSchema:
-        - $formkit: radio
-          name: rss
-          label: RSS
-          value: true
-          options:
-            - value: true
-              label: 开启
-            - value: false
-              label: 关闭
-        - $formkit: text
-          name: twitter
-          label: Twitter
-          placeholder: 只需填入 Twitter 用户名即可
-        - $formkit: text
-          name: facebook
-          label: Facebook
-          placeholder: 只需填入 Facebook 用户名即可
-        - $formkit: text
-          name: instagram
-          label: Instagram
-          placeholder: 只需填入 Instagram 用户名即可
-        - $formkit: text
-          name: dribbble
-          label: Dribbble
-          placeholder: 只需填入 Dribbble 用户名即可
-        - $formkit: text
-          name: weibo
-          label: 微博
-          placeholder: 只需填入微博 Id 即可
-        - $formkit: text
-          name: email
-          label: Email
-          placeholder: 只需填入邮箱地址即可
-        - $formkit: text
-          name: github
-          label: GitHub
-          placeholder: 只需填入 GitHub 用户名即可
-        - $formkit: text
-          name: qq
-          label: QQ
-          placeholder: 只需填入 QQ 号即可
-        - $formkit: text
-          name: telegram
-          label: Telegram
-          placeholder: 只需填入 Telegram Id 即可
+        - $formkit: repeater
+          name: items
+          label: 社交媒体
+          value: []
+          children:
+            - $formkit: select
+              name: icon
+              label: 图标
+              options:
+                - label: RSS
+                  value: i-mdi-rss
+                - label: Twitter
+                  value: i-mdi-twitter
+                - label: Facebook
+                  value: i-mdi-facebook
+                - label: Instagram
+                  value: i-mdi-instagram
+                - label: Dribbble
+                  value: i-mdi-dribbble
+                - label: 新浪微博
+                  value: i-mdi-sina-weibo
+                - label: QQ
+                  value: i-mdi-qqchat
+                - label: Telegram
+                  value: i-mdi-telegram
+                - label: 电子邮箱
+                  value: i-mdi-email
+                - label: GitHub
+                  value: i-mdi-github
+            - $formkit: text
+              name: name
+              label: 名称
+            - $formkit: text
+              name: url
+              label: 链接
+              validation: "required"

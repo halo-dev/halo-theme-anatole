@@ -6,23 +6,26 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require("@tailwindcss/typography"),
     Icons(() => ({
       tabler: {
         includeAll: true,
       },
+      mdi: {
+        includeAll: true,
+      },
     })),
   ],
+
   safelist: [
-    "prose-sm",
-    "prose-base",
-    "prose-lg",
-    "prose-xl",
-    "prose-2xl",
-    "prose-gray",
-    "prose-slate",
-    "prose-zinc",
-    "prose-neutral",
-    "prose-stone",
+    "i-mdi-rss",
+    "i-mdi-twitter",
+    "i-mdi-facebook",
+    "i-mdi-instagram",
+    "i-mdi-dribbble",
+    "i-mdi-sina-weibo",
+    "i-mdi-qqchat",
+    "i-mdi-telegram",
+    "i-mdi-email",
+    "i-mdi-github",
   ],
 };
