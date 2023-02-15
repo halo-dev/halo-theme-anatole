@@ -17,3 +17,11 @@
   }
   </#if> */
 </style>
+
+<th:block th:if="not ${#strings.isEmpty(theme.config.basic.sidebar_background)}">
+  <style>
+    .sidebar {
+      background: url("[[${theme.config.basic.sidebar_background}]]") no-repeat center center fixed;
+    }
+  </style>
+</th:block>

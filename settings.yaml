@@ -20,10 +20,10 @@ spec:
               label: 40%
             - value: 50%
               label: 50%
-        - $formkit: text
+        - $formkit: attachment
           name: sidebar_background
           label: 侧边栏背景图
-        - $formkit: text
+        - $formkit: attachment
           name: icon
           label: 右上角图标
         - $formkit: radio
