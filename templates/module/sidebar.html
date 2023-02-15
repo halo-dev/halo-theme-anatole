@@ -6,7 +6,7 @@
         class="inline-block"
         th:src="${site.logo}"
         style="width: 127px"
-        th:styleappend="${theme.config.style.avatar_circle ? ';border-radius:50%' : ''}"
+        th:styleappend="${theme.config.basic.avatar_circle ? ';border-radius:50%' : ''}"
       />
       <h3 class="!mt-3 !mb-0">
         <a href="/" th:title="${site.title}" th:text="${site.title}"></a>

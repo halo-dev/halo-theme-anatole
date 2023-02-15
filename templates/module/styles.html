@@ -1,14 +1,14 @@
 <style th:inline="css">
   .sidebar {
-    width: /*[(${theme.config.style?.sidebar_width})]*/ ;
+    width: /*[(${theme.config.basic?.sidebar_width})]*/ ;
   }
 
   .page-top {
-    width: calc(100% - [(${theme.config.style?.sidebar_width})]);
+    width: calc(100% - [(${theme.config.basic?.sidebar_width})]);
   }
 
   .content {
-    width: calc(100% - [(${theme.config.style?.sidebar_width})]);
+    width: calc(100% - [(${theme.config.basic?.sidebar_width})]);
   }
 
   /* <#if settings.sidebar_background?? && settings.sidebar_background!=''>
