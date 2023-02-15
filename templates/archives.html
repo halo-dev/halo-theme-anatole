@@ -35,8 +35,9 @@
         role="navigation"
         th:href="@{${archives.prevUrl}}"
         title="上一页"
-        >上一页</a
       >
+        上一页
+      </a>
       <span class="text-sm" th:text="${archives.page} +'/'+ ${archives.totalPages}"></span>
       <a
         th:if="${archives.hasNext()}"
@@ -44,8 +45,9 @@
         role="navigation"
         th:href="@{${archives.nextUrl}}"
         title="下一页"
-        >下一页</a
       >
+        下一页
+      </a>
     </div>
   </th:block>
 </html>
