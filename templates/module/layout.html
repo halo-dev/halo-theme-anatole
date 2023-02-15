@@ -13,7 +13,11 @@
     <link rel="stylesheet" th:href="@{/assets/dist/style.css?v={version}(version=${theme.spec.version})}" />
     <script th:src="@{/assets/dist/main.iife.js?v={version}(version=${theme.spec.version})}"></script>
 
-    <link th:if="${theme.config.basic.katex}" th:src="@{/assets/libs/katex/katex.min.css}" rel="stylesheet" />
+    <link
+      th:if="${theme.config.basic.katex} and ${_templateId == 'post' or _templateId == 'singlePage'}"
+      th:src="@{/assets/libs/katex/katex.min.css}"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <th:block th:replace="~{module/sidebar}" />
