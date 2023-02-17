@@ -1,4 +1,4 @@
-<h1><a href="https://github.com/halo-dev" target="_blank">halo-theme-anatole</a></h1>
+# halo-theme-anatole
 
 ## 说明
 
@@ -6,41 +6,41 @@
 
 原主题地址：[https://github.com/hi-caicai/farbox-theme-Anatole](https://github.com/hi-caicai/farbox-theme-Anatole)
 
-## 预览截图
+## 使用方式
 
-![index](https://i.loli.net/2019/05/29/5ced6a1f70be890881.png)
-![settings](https://i.loli.net/2019/05/29/5ced6a1fddb4562005.png)
+1. 在 [Releases](https://github.com/halo-dev/halo-theme-anatole/releases) 下载最新的主题文件。
+2. 在 Halo 后台的主题管理上传主题文件进行安装。
 
-## 安装方法
+## 开发环境
 
-### 方法一（稳定版本）
+可以参考 [https://docs.halo.run/developer-guide/theme/prepare](https://docs.halo.run/developer-guide/theme/prepare#%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E4%B8%BB%E9%A2%98) 将主题仓库放置在 Halo 的工作目录。
 
-1. [点击](https://github.com/halo-dev/halo-theme-anatole/releases)选择最新的版本下载。
-2. 进入后台 -> 外观 -> 主题。
-3. 点击右下方按钮选择安装主题，随后选择 `本地上传`。
-4. 选择下载好的主题包（zip）即可。
+> **Warning**
+>
+> 注意，由于目前 Halo 的规定，主题目录名称必须和 `theme.yaml` 的 `metadata.name` 保持一致。
 
-### 方法二（开发版本）
+```bash
+git clone git@github.com:halo-dev/halo-theme-anatole.git ~/halo2-dev/themes/theme-anatole
 
-> 注意，开发版本可能会存在一些问题，请谨慎使用。
+# 或者当你 fork 之后
 
-1. 复制 `https://github.com/halo-dev/halo-theme-anatole`。
-2. 进入后台 -> 外观 -> 主题。
-3. 点击右下方按钮选择安装主题，随后选择 `远程拉取`。
-4. 粘贴复制的链接到远程地址，点击下载即可。
+git clone git@github.com:{your_github_id}/halo-theme-anatole.git ~/halo2-dev/themes/theme-anatole
+```
 
-## 更新方法
+```bash
+cd ~/halo2-dev/themes/theme-anatole
+```
 
-### 方法一（稳定版本）
+```bash
+pnpm install
+```
 
-1. [点击](https://github.com/halo-dev/halo-theme-anatole/releases)选择最新的版本下载。
-2. 进入后台 -> 外观 -> 主题。
-3. 找到需要更新的主题，点击主题下方的 `更多` 按钮。
-4. 点击 `从主题包更新`，选择下载好的主题包（zip）即可。
+```bash
+# 监听源码变动并自动编译资源
+pnpm dev
+```
 
-### 方法二（开发版本）
-
-1. 进入后台 -> 外观 -> 主题。
-2. 找到需要更新的主题，点击主题下方的 `更多` 按钮。
-3. 点击 `在线更新`。
-
+```bash
+# 构建资源
+pnpm build
+```
