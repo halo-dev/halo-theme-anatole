@@ -1,0 +1,31 @@
+<div class="sidebar animated fadeInDown">
+  <div class="logo-title">
+    <div class="title">
+      <img
+        alt="Logo"
+        class="inline-block"
+        th:src="${site.logo}"
+        style="width: 127px"
+        th:styleappend="${theme.config.basic.avatar_circle ? ';border-radius:50%' : ''}"
+      />
+      <h3 class="!mt-3 !mb-0">
+        <a href="/" th:title="${site.title}" th:text="${site.title}"></a>
+      </h3>
+      <div class="description mt-2">
+        <p class="description-text" th:text="${site.subtitle}"></p>
+      </div>
+    </div>
+  </div>
+  <th:block th:replace="~{module/social-list}" />
+  <div class="footer">
+    <a target="_blank" href="#">
+      <a href="https://www.caicai.me">Designed by CaiCai</a>
+      <div class="by_halo">
+        <a href="https://halo.run" target="_blank">Proudly published with Halo</a>
+      </div>
+      <div class="footer_text">
+        <halo:footer />
+      </div>
+    </a>
+  </div>
+</div>

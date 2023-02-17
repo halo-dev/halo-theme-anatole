@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh" th:fragment="html (title,content)">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title th:text="${title}"></title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="renderer" content="webkit" />
+    <link rel="alternate" type="application/rss+xml" title="atom 1.0" href="/rss.xml" />
+    <th:block th:replace="~{module/styles}" />
+    <link rel="stylesheet" th:href="@{/assets/dist/style.css?v={version}(version=${theme.spec.version})}" />
+    <script th:src="@{/assets/dist/main.iife.js?v={version}(version=${theme.spec.version})}"></script>
+
+    <link
+      th:if="${theme.config.basic.katex} and ${_templateId == 'post' or _templateId == 'singlePage'}"
+      th:src="@{/assets/libs/katex/katex.min.css}"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <th:block th:replace="~{module/sidebar}" />
+    <div class="main">
+      <th:block th:replace="~{module/page-top}" />
+      <div class="content">
+        <th:block th:replace="${content}" />
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{module/layout :: html(title = '分类目录 - ' + ${site.title}, content = ~{::content})}"
+>
+  <th:block th:fragment="content">
+    <th:block
+      th:replace="~{module/page-heading :: html(title = '标签', subtitle= ${#lists.size(tags)}, nested = null)}"
+    ></th:block>
+    <div
+      class="post-page"
+      x-data="{handleHighlightTag: (tag,highlight) => {
+    const targetTag = document.getElementById('tag-' + tag)
+    if (targetTag) {
+        const classList = targetTag.classList
+        highlight ? classList.add('bg-gray-50', 'p-1', 'rounded-lg') : classList.remove('bg-gray-50', 'p-1', 'rounded-lg')
+    }
+}}"
+    >
+      <div class="post animated fadeInDown">
+        <div class="mb-10 flex flex-row flex-wrap gap-2">
+          <a
+            th:each="tag : ${tags}"
+            th:text="|#${tag.spec.displayName}|"
+            class="text-sm text-black/80 hover:font-medium hover:text-black hover:underline"
+            th:attr="x-data=|{slug:'${tag.spec.slug}'}|"
+            x-on:mouseenter="handleHighlightTag(slug,true)"
+            x-on:mouseleave="handleHighlightTag(slug,false)"
+          >
+          </a>
+        </div>
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+          <th:block th:each="tag : ${tags}" th:with="posts=${postFinder.listByTag(1,10,tag.metadata.name)}">
+            <div th:id="|tag-${tag.spec.slug}|" th:if="${posts.total gt 0}" class="transition-all duration-300">
+              <a th:href="@{${tag.status.permalink}}" class="underline-offset-1 hover:underline">
+                <div class="inline-flex items-center text-base font-medium text-gray-800">
+                  <i class="i-mdi-tag h-5 w-5"></i>
+                  <span class="ml-2">
+                    <th:block th:text="${tag.spec.displayName}"></th:block>
+                    <sup class="ml-1 text-gray-400" th:text="${tag.postCount}"></sup>
+                  </span>
+                </div>
+              </a>
+              <div class="mt-3">
+                <div class="flex flex-col gap-y-2 pl-5">
+                  <th:block th:if="${posts.total gt 0}">
+                    <div th:each="post : ${posts.items}" class="flex justify-between">
+                      <a
+                        th:href="@{${post.status.permalink}}"
+                        class="text-sm text-black/80 hover:font-medium hover:text-black hover:underline"
+                        th:text="${post.spec.title}"
+                      ></a>
+                      <span
+                        class="text-sm text-gray-300"
+                        th:text="${#dates.format(post.spec.publishTime,'yyyy-MM-dd HH:mm')}"
+                      ></span>
+                    </div>
+                    <div th:if="${posts.total gt 10}" class="mt-2 flex justify-end">
+                      <a
+                        th:href="@{${tag.status.permalink}}"
+                        class="inline-flex items-center text-sm text-black/60 hover:font-medium hover:text-black hover:underline"
+                      >
+                        <i class="i-mdi-unfold-more-vertical mr-2"></i>
+                        更多
+                      </a>
+                    </div>
+                  </th:block>
+                </div>
+              </div>
+            </div>
+          </th:block>
+        </div>
+      </div>
+    </div>
+  </th:block>
+</html>

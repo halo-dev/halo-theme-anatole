@@ -1,0 +1,31 @@
+<div class="page-top animated fadeInDown">
+  <div
+    id="nav"
+    class="nav ml-[30px] mr-4 flex h-full flex-1 flex-nowrap items-center gap-6 overflow-x-auto whitespace-nowrap text-sm"
+  >
+    <div
+      th:each="menuItem : ${menuFinder.getPrimary().menuItems}"
+      class="nav-item relative inline-flex h-full items-center text-black/70 transition-all hover:text-[#4786D6]"
+    >
+      <a
+        th:href="@{${menuItem.status.href}}"
+        th:text="${menuItem.status.displayName}"
+        th:target="${menuItem.spec.target?.value}"
+      ></a>
+    </div>
+  </div>
+  <div class="information gap-4">
+    <!-- https://github.com/halo-sigs/plugin-search-widget -->
+    <div
+      th:if="${pluginFinder.available('PluginSearchWidget')}"
+      onclick="SearchWidget.open()"
+      class="flex h-[32px] w-[32px] cursor-pointer items-center justify-center rounded-full border text-gray-500 transition-all hover:bg-gray-600 hover:text-white"
+    >
+      <i class="i-mdi-text-box-search h-4 w-4"></i>
+    </div>
+    <!-- TODO -->
+    <!-- <div class="avatar">
+      <img src="${settings.icon!'${user.avatar!}'}" alt="Logo" />
+    </div> -->
+  </div>
+</div>

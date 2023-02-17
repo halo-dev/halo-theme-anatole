@@ -1,11 +1,17 @@
-id: caicai_anatole
-name: Anatole
-author:
-  name: Caicai
-  website: https://www.caicai.me
-description: Halo Default Theme
-logo: https://avatars1.githubusercontent.com/u/1811819?s=460&v=4
-website: https://github.com/halo-dev/halo-theme-anatole
-repo: https://github.com/halo-dev/halo-theme-anatole
-version: 1.5.0-alpha.2
-require: 1.5.0
+apiVersion: theme.halo.run/v1alpha1
+kind: Theme
+metadata:
+  name: theme-anatole
+spec:
+  displayName: Anatole
+  author:
+    name: Caicai
+    website: https://www.caicai.me
+  description: Halo Default Theme
+  logo: https://avatars1.githubusercontent.com/u/1811819?s=460&v=4
+  website: https://github.com/halo-dev/halo-theme-anatole
+  repo: https://github.com/halo-dev/halo-theme-anatole
+  settingName: theme-anatole-setting
+  configMapName: theme-anatole-configMap
+  version: 2.0.0
+  require: ">=2.2.0"

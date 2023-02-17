@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{module/layout :: html(title = '归档 - ' + ${site.title}, content = ~{::content})}"
+>
+  <th:block th:fragment="content">
+    <th:block th:replace="~{module/page-heading :: html(title = '归档', subtitle='', nested = null)}"></th:block>
+    <div class="archive animated fadeInDown">
+      <ul class="list-with-title">
+        <th:block th:each="archive : ${archives.items}">
+          <div class="listing-title" th:text="${archive.year}"></div>
+          <ul class="listing">
+            <th:block th:each="month : ${archive.months}">
+              <div th:each="post : ${month.posts}" class="listing-item">
+                <div class="listing-post">
+                  <a
+                    th:href="@{${post.status.permalink}}"
+                    th:title="${post.spec.title}"
+                    th:text="${post.spec.title}"
+                  ></a>
+                  <div class="post-time">
+                    <span class="date" th:text="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}"></span>
+                  </div>
+                </div>
+              </div>
+            </th:block>
+          </ul>
+        </th:block>
+      </ul>
+    </div>
+    <div th:if="${archives.hasPrevious() || archives.hasNext()}" class="pagination flex items-center justify-between">
+      <a
+        th:if="${archives.hasPrevious()}"
+        class="btn w-20"
+        role="navigation"
+        th:href="@{${archives.prevUrl}}"
+        title="上一页"
+      >
+        上一页
+      </a>
+      <span class="text-sm" th:text="${archives.page} +'/'+ ${archives.totalPages}"></span>
+      <a
+        th:if="${archives.hasNext()}"
+        class="btn w-20"
+        role="navigation"
+        th:href="@{${archives.nextUrl}}"
+        title="下一页"
+      >
+        下一页
+      </a>
+    </div>
+  </th:block>
+</html>

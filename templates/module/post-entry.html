@@ -1,0 +1,50 @@
+<div th:each="post : ${postItems}" th:attr="x-data=|{name:'${post.metadata.name}'}|" class="post animated fadeInDown">
+  <div class="post-title">
+    <h3 class="font-medium">
+      <a th:href="@{${post.status.permalink}}" th:text="${post.spec.title}"></a>
+    </h3>
+  </div>
+  <div class="post-content text-sm text-black/50">
+    <p class="py-2.5" th:text="|${post.status.excerpt}...|"></p>
+  </div>
+  <div class="post-info border-b border-b-[#f2f2f2] pb-[30px]">
+    <div class="meta">
+      <div class="info">
+        <i class="i-mdi-calendar-month-outline h-3 w-3"></i>
+        <span th:text="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}"></span>
+        <i class="i-mdi-eye h-3 w-3"></i>
+        <span th:text="${post.stats.visit}">0</span>
+        <i class="i-mdi-comment-outline h-3 w-3"></i>
+        <a th:href="@{${post.status.permalink}}" th:text="${post.stats.comment}">${post.commentCount!}</a>
+        <div
+          class="inline-block cursor-pointer hover:text-red-700"
+          x-bind:class="{'text-red-700': upvoted(name)}"
+          @click="handleUpvote(name)"
+        >
+          <i x-show="upvoted(name)" class="i-mdi-heart h-3 w-3"></i>
+          <i x-show="!upvoted(name)" class="i-mdi-heart-outline h-3 w-3"></i>
+          <span th:attr="data-upvote-post-name=${post.metadata.name}" th:text="${post.stats.upvote}">0</span>
+        </div>
+        <th:block th:if="${not #lists.isEmpty(post.categories)}" class="inline-block">
+          <i class="i-mdi-folder-outline h-3 w-3"></i>
+          <a
+            th:each="category : ${post.categories}"
+            th:href="@{${category.status.permalink}}"
+            th:title="${category.spec.displayName}"
+            th:text="${category.spec.displayName}"
+          ></a>
+        </th:block>
+        <th:block th:if="${not #lists.isEmpty(post.tags)}" class="inline-block">
+          <i class="i-mdi-tag h-3 w-3"></i>
+          <a
+            th:each="tag : ${post.tags}"
+            th:href="@{${tag.status.permalink}}"
+            th:title="${tag.spec.displayName}"
+            th:text="${tag.spec.displayName}"
+          >
+          </a>
+        </th:block>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{module/layout :: html(title =${singlePage.spec.title} + ' - ' + ${site.title}, content = ~{::content})}"
+>
+  <th:block th:fragment="content">
+    <th:block
+      th:replace="~{module/page-heading :: html(title = ${singlePage.spec.title},subtitle='', nested = ~{::nested})}"
+    >
+      <th:block th:fragment="nested">
+        <div class="post-info mt-2">
+          <div class="meta">
+            <div class="info">
+              <i class="i-mdi-calendar-month-outline h-3 w-3"></i>
+              <span class="date" th:text="${#dates.format(singlePage.spec.publishTime,'yyyy-MM-dd')}"></span>
+              <i class="i-mdi-comment-outline h-3 w-3"></i>
+              <a href="#comment_widget" th:text="${singlePage.stats.comment}">0</a>
+            </div>
+          </div>
+        </div>
+      </th:block>
+    </th:block>
+
+    <div class="post-page">
+      <div class="post animated fadeInDown">
+        <div id="post-content" class="post-content markdown-body" th:utext="${singlePage.content.content}"></div>
+      </div>
+      <div id="comment_widget" style="margin: 30px">
+        <halo:comment
+          group="content.halo.run"
+          kind="SinglePage"
+          th:attr="name=${singlePage.metadata.name}"
+          colorScheme="'light'"
+        />
+      </div>
+    </div>
+  </th:block>
+</html>

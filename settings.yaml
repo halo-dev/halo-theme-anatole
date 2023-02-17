@@ -1,259 +1,85 @@
-style:
-  label: 样式设置
-  items:
-    sidebar_width:
-      name: sidebar_width
-      label: 侧边栏宽度
-      type: select
-      data-type: string
-      default: '40%'
-      options:
-        - value: '20%'
-          label: '20%'
-        - value: '30%'
-          label: '30%'
-        - value: '40%'
-          label: '40%'
-        - value: '50%'
-          label: '50%'
-    sidebar_background:
-      name: sidebar_background
-      label: 侧边栏背景图
-      type: attachment
-      data-type: string
-    icon:
-      name: icon
-      label: 右上角图标
-      type: attachment
-    avatar_circle:
-      name: avatar_circle
-      label: 圆形头像
-      type: radio
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    katex:
-      name: katex
-      label: KaTex 公式渲染
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    highlight_extra_languages:
-      name: highlight_extra_languages
-      label: 文章代码高亮语言
-      type: textarea
-      description: "默认已经包含：<code>php,diff,java,css,bash,json,perl,swift,plaintext,ruby,yaml,sql,vbnet,ini,scss,less,cpp,typescript,csharp,rust,python,python-repl,objectivec,r,shell,makefile,go,xml,markdown,lua,javascript,php-template,kotlin,c</code><br>如果需要添加其他语言，请按照相同格式添加。"
-    highlight_style:
-      name: highlight_style
-      label: 文章代码高亮主题
-      type: select
-      default: 'default.min.css'
-      options:
-        - value: 'a11y-dark.min.css'
-          label: 'a11y-dark.min.css'
-        - value: 'a11y-light.min.css'
-          label: 'a11y-light.min.css'
-        - value: 'agate.min.css'
-          label: 'agate.min.css'
-        - value: 'an-old-hope.min.css'
-          label: 'an-old-hope.min.css'
-        - value: 'androidstudio.min.css'
-          label: 'androidstudio.min.css'
-        - value: 'arduino-light.min.css'
-          label: 'arduino-light.min.css'
-        - value: 'arta.min.css'
-          label: 'arta.min.css'
-        - value: 'ascetic.min.css'
-          label: 'ascetic.min.css'
-        - value: 'atom-one-dark-reasonable.min.css'
-          label: 'atom-one-dark-reasonable.min.css'
-        - value: 'atom-one-dark.min.css'
-          label: 'atom-one-dark.min.css'
-        - value: 'atom-one-light.min.css'
-          label: 'atom-one-light.min.css'
-        - value: 'brown-paper.min.css'
-          label: 'brown-paper.min.css'
-        - value: 'codepen-embed.min.css'
-          label: 'codepen-embed.min.css'
-        - value: 'color-brewer.min.css'
-          label: 'color-brewer.min.css'
-        - value: 'dark.min.css'
-          label: 'dark.min.css'
-        - value: 'default.min.css'
-          label: 'default.min.css'
-        - value: 'devibeans.min.css'
-          label: 'devibeans.min.css'
-        - value: 'docco.min.css'
-          label: 'docco.min.css'
-        - value: 'far.min.css'
-          label: 'far.min.css'
-        - value: 'felipec.min.css'
-          label: 'felipec.min.css'
-        - value: 'foundation.min.css'
-          label: 'foundation.min.css'
-        - value: 'github-dark-dimmed.min.css'
-          label: 'github-dark-dimmed.min.css'
-        - value: 'github-dark.min.css'
-          label: 'github-dark.min.css'
-        - value: 'github.min.css'
-          label: 'github.min.css'
-        - value: 'gml.min.css'
-          label: 'gml.min.css'
-        - value: 'googlecode.min.css'
-          label: 'googlecode.min.css'
-        - value: 'gradient-dark.min.css'
-          label: 'gradient-dark.min.css'
-        - value: 'gradient-light.min.css'
-          label: 'gradient-light.min.css'
-        - value: 'grayscale.min.css'
-          label: 'grayscale.min.css'
-        - value: 'hybrid.min.css'
-          label: 'hybrid.min.css'
-        - value: 'idea.min.css'
-          label: 'idea.min.css'
-        - value: 'intellij-light.min.css'
-          label: 'intellij-light.min.css'
-        - value: 'ir-black.min.css'
-          label: 'ir-black.min.css'
-        - value: 'isbl-editor-dark.min.css'
-          label: 'isbl-editor-dark.min.css'
-        - value: 'isbl-editor-light.min.css'
-          label: 'isbl-editor-light.min.css'
-        - value: 'kimbie-dark.min.css'
-          label: 'kimbie-dark.min.css'
-        - value: 'kimbie-light.min.css'
-          label: 'kimbie-light.min.css'
-        - value: 'lightfair.min.css'
-          label: 'lightfair.min.css'
-        - value: 'lioshi.min.css'
-          label: 'lioshi.min.css'
-        - value: 'magula.min.css'
-          label: 'magula.min.css'
-        - value: 'mono-blue.min.css'
-          label: 'mono-blue.min.css'
-        - value: 'monokai-sublime.min.css'
-          label: 'monokai-sublime.min.css'
-        - value: 'monokai.min.css'
-          label: 'monokai.min.css'
-        - value: 'night-owl.min.css'
-          label: 'night-owl.min.css'
-        - value: 'nnfx-dark.min.css'
-          label: 'nnfx-dark.min.css'
-        - value: 'nnfx-light.min.css'
-          label: 'nnfx-light.min.css'
-        - value: 'nord.min.css'
-          label: 'nord.min.css'
-        - value: 'obsidian.min.css'
-          label: 'obsidian.min.css'
-        - value: 'paraiso-dark.min.css'
-          label: 'paraiso-dark.min.css'
-        - value: 'paraiso-light.min.css'
-          label: 'paraiso-light.min.css'
-        - value: 'pojoaque.min.css'
-          label: 'pojoaque.min.css'
-        - value: 'purebasic.min.css'
-          label: 'purebasic.min.css'
-        - value: 'qtcreator-dark.min.css'
-          label: 'qtcreator-dark.min.css'
-        - value: 'qtcreator-light.min.css'
-          label: 'qtcreator-light.min.css'
-        - value: 'rainbow.min.css'
-          label: 'rainbow.min.css'
-        - value: 'routeros.min.css'
-          label: 'routeros.min.css'
-        - value: 'school-book.min.css'
-          label: 'school-book.min.css'
-        - value: 'shades-of-purple.min.css'
-          label: 'shades-of-purple.min.css'
-        - value: 'srcery.min.css'
-          label: 'srcery.min.css'
-        - value: 'stackoverflow-dark.min.css'
-          label: 'stackoverflow-dark.min.css'
-        - value: 'stackoverflow-light.min.css'
-          label: 'stackoverflow-light.min.css'
-        - value: 'sunburst.min.css'
-          label: 'sunburst.min.css'
-        - value: 'tokyo-night-dark.min.css'
-          label: 'tokyo-night-dark.min.css'
-        - value: 'tokyo-night-light.min.css'
-          label: 'tokyo-night-light.min.css'
-        - value: 'tomorrow-night-blue.min.css'
-          label: 'tomorrow-night-blue.min.css'
-        - value: 'tomorrow-night-bright.min.css'
-          label: 'tomorrow-night-bright.min.css'
-        - value: 'vs.min.css'
-          label: 'vs.min.css'
-        - value: 'vs2015.min.css'
-          label: 'vs2015.min.css'
-        - value: 'xcode.min.css'
-          label: 'xcode.min.css'
-        - value: 'xt256.min.css'
-          label: 'xt256.min.css'
-sns:
-  label: 社交资料
-  items:
-    rss:
-      name: rss
-      label: RSS
-      type: radio
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    twitter:
-      name: twitter
-      label: Twitter
-      type: text
-      placeholder: '只需填入 Twitter 用户名即可'
-    facebook:
-      name: facebook
-      label: Facebook
-      type: text
-      placeholder: '只需填入 Facebook 用户名即可'
-    instagram:
-      name: instagram
-      label: Instagram
-      type: text
-      placeholder: '只需填入 Instagram 用户名即可'
-    dribbble:
-      name: dribbble
-      label: Dribbble
-      type: text
-      placeholder: '只需填入 Dribbble 用户名即可'
-    weibo:
-      name: weibo
-      label: 微博
-      type: text
-      placeholder: '只需填入微博 Id 即可'
-    email:
-      name: email
-      label: Email
-      type: text
-      placeholder: '只需填入邮箱地址即可'
-    github:
-      name: github
-      label: GitHub
-      type: text
-      placeholder: '只需填入 GitHub 用户名即可'
-    qq:
-      name: qq
-      label: QQ
-      type: text
-      placeholder: '只需填入 QQ 号即可'
-    telegram:
-      name: telegram
-      label: Telegram
-      type: text
-      placeholder: '只需填入 Telegram Id 即可'
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: theme-anatole-setting
+spec:
+  forms:
+    - group: basic
+      label: 基本设置
+      formSchema:
+        - $formkit: select
+          name: sidebar_width
+          label: 侧边栏宽度
+          value: 40%
+          options:
+            - value: 20%
+              label: 20%
+            - value: 30%
+              label: 30%
+            - value: 40%
+              label: 40%
+            - value: 50%
+              label: 50%
+        - $formkit: attachment
+          name: sidebar_background
+          label: 侧边栏背景图
+        - $formkit: attachment
+          name: icon
+          label: 右上角图标
+        - $formkit: radio
+          name: avatar_circle
+          label: 圆形头像
+          value: true
+          options:
+            - value: true
+              label: 开启
+            - value: false
+              label: 关闭
+        - $formkit: radio
+          name: katex
+          label: KaTex 公式渲染
+          value: false
+          options:
+            - value: true
+              label: 开启
+            - value: false
+              label: 关闭
+    - group: social_media
+      label: 社交资料
+      formSchema:
+        - $formkit: repeater
+          name: items
+          label: 社交媒体
+          value: []
+          children:
+            - $formkit: select
+              name: icon
+              label: 图标
+              options:
+                - label: RSS
+                  value: i-mdi-rss
+                - label: Twitter
+                  value: i-mdi-twitter
+                - label: Facebook
+                  value: i-mdi-facebook
+                - label: Instagram
+                  value: i-mdi-instagram
+                - label: Dribbble
+                  value: i-mdi-dribbble
+                - label: 新浪微博
+                  value: i-mdi-sina-weibo
+                - label: QQ
+                  value: i-mdi-qqchat
+                - label: Telegram
+                  value: i-mdi-telegram
+                - label: 电子邮箱
+                  value: i-mdi-email
+                - label: GitHub
+                  value: i-mdi-github
+            - $formkit: text
+              name: name
+              label: 名称
+            - $formkit: text
+              name: url
+              label: 链接
+              validation: "required"

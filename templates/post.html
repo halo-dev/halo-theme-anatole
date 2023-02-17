@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{module/layout :: html(title =${post.spec.title} + ' - ' + ${site.title}, content = ~{::content})}"
+>
+  <th:block th:fragment="content">
+    <th:block th:replace="~{module/page-heading :: html(title = ${post.spec.title},subtitle='', nested = ~{::nested})}">
+      <th:block th:fragment="nested">
+        <div class="post-info mt-2" x-data="posts">
+          <div th:attr="x-data=|{name:'${post.metadata.name}'}|" class="meta">
+            <div class="info">
+              <i class="i-mdi-calendar-month-outline h-3 w-3"></i>
+              <span th:text="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}"></span>
+              <i class="i-mdi-eye h-3 w-3"></i>
+              <span th:text="${post.stats.visit}"></span>
+              <i class="i-mdi-comment-outline h-3 w-3"></i>
+              <a href="#comment_widget" th:text="${post.stats.comment}">0</a>
+              <div
+                class="inline-block cursor-pointer hover:text-red-700"
+                x-bind:class="{'text-red-700': upvoted(name)}"
+                x-on:click="handleUpvote(name)"
+              >
+                <i x-show="upvoted(name)" class="i-mdi-heart h-3 w-3"></i>
+                <i x-show="!upvoted(name)" class="i-mdi-heart-outline h-3 w-3"></i>
+                <span th:attr="data-upvote-post-name=${post.metadata.name}" th:text="${post.stats.upvote}"></span>
+              </div>
+              <th:block th:if="${not #lists.isEmpty(post.categories)}" class="inline-block">
+                <i class="i-mdi-folder-outline h-3 w-3"></i>
+                <a
+                  th:each="category : ${post.categories}"
+                  th:href="@{${category.status.permalink}}"
+                  th:title="${category.spec.displayName}"
+                  th:text="${category.spec.displayName}"
+                ></a>
+              </th:block>
+              <th:block th:if="${not #lists.isEmpty(post.tags)}" class="inline-block">
+                <i class="i-mdi-tag h-3 w-3"></i>
+                <a
+                  th:each="tag : ${post.tags}"
+                  th:href="@{${tag.status.permalink}}"
+                  th:title="${tag.spec.displayName}"
+                  th:text="${tag.spec.displayName}"
+                >
+                </a>
+              </th:block>
+            </div>
+          </div>
+        </div>
+      </th:block>
+    </th:block>
+
+    <div class="post-page">
+      <div class="post animated fadeInDown">
+        <div id="post-content" class="post-content markdown-body" th:utext="${post.content.content}"></div>
+      </div>
+      <div
+        th:with="postCursor = ${postFinder.cursor(post.metadata.name)}"
+        class="pagination flex items-center justify-between"
+      >
+        <a
+          class="btn"
+          th:if="${postCursor.hasPrevious()}"
+          role="navigation"
+          th:href="@{${postCursor.previous.status.permalink}}"
+          th:title="${postCursor.previous.spec.title}"
+        >
+          上一篇
+        </a>
+        <a
+          class="btn"
+          th:if="${postCursor.hasNext()}"
+          role="navigation"
+          th:href="@{${postCursor.next.status.permalink}}"
+          th:title="${postCursor.next.spec.title}"
+        >
+          下一篇
+        </a>
+      </div>
+      <div id="comment_widget" style="margin: 30px">
+        <halo:comment group="content.halo.run" kind="Post" th:attr="name=${post.metadata.name}" colorScheme="'light'" />
+      </div>
+    </div>
+  </th:block>
+</html>

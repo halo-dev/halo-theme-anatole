@@ -1,0 +1,7 @@
+<ul th:with="social_medias = ${theme.config.social_media.items}" class="social-links mt-1">
+  <li th:each="social_media : ${social_medias}">
+    <a th:href="${social_media.url}" target="_blank" th:title="${social_media.name}">
+      <i class="inline-block h-4 w-4" th:classappend="${social_media.icon}"></i>
+    </a>
+  </li>
+</ul>
