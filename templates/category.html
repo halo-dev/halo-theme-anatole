@@ -7,7 +7,7 @@
     <th:block
       th:replace="~{module/page-heading :: html(title = |分类：${category.spec.displayName}|, subtitle=|${category.postCount} 篇文章|, nested = null)}"
     ></th:block>
-    <div th:with="postItems=${posts.items}" x-data="posts">
+    <div th:with="postItems=${posts.items}" x-data="upvote('post','content.halo.run','posts')">
       <th:block th:replace="~{module/post-entry}" />
     </div>
     <div th:if="${posts.hasPrevious() || posts.hasNext()}" class="pagination flex items-center justify-between">

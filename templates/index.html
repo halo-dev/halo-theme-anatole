@@ -4,7 +4,7 @@
   th:replace="~{module/layout :: html(title = ${site.title}, content = ~{::content})}"
 >
   <th:block th:fragment="content">
-    <div th:with="postItems=${posts.items}" x-data="posts">
+    <div th:with="postItems=${posts.items}" x-data="upvote('post','content.halo.run','posts')">
       <th:block th:replace="~{module/post-entry}" />
     </div>
 
