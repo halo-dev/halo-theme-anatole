@@ -11,6 +11,13 @@
 1. 在 [Releases](https://github.com/halo-dev/halo-theme-anatole/releases) 下载最新的主题文件。
 2. 在 Halo 后台的主题管理上传主题文件进行安装。
 
+## 插件适配
+
+- 评论组件：<https://github.com/halo-sigs/plugin-comment-widget>
+- 搜索组件：<https://github.com/halo-sigs/plugin-search-widget>
+- 瞬间：<https://github.com/halo-sigs/plugin-moments>
+- 相册：<https://github.com/halo-sigs/plugin-photos>
+
 ## 开发环境
 
 可以参考 [https://docs.halo.run/developer-guide/theme/prepare](https://docs.halo.run/developer-guide/theme/prepare#%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E4%B8%BB%E9%A2%98) 将主题仓库放置在 Halo 的工作目录。
