@@ -6,7 +6,7 @@
   <th:block th:fragment="content">
     <th:block th:replace="~{module/page-heading :: html(title = ${post.spec.title},subtitle='', nested = ~{::nested})}">
       <th:block th:fragment="nested">
-        <div class="post-info mt-2" x-data="posts">
+        <div class="post-info mt-2" x-data="upvote('post','content.halo.run','posts')">
           <div th:attr="x-data=|{name:'${post.metadata.name}'}|" class="meta">
             <div class="info">
               <i class="i-mdi-calendar-month-outline h-3 w-3"></i>

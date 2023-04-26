@@ -1,14 +1,14 @@
-interface PostState {
+interface upvoteState {
   upvotedNames: string[];
   init(): void;
   upvoted(id: string): boolean;
   handleUpvote(name: string): void;
 }
 
-export default (): PostState => ({
+export default (key: string, group: string, plural: string): upvoteState => ({
   upvotedNames: [],
   init() {
-    this.upvotedNames = JSON.parse(localStorage.getItem("anatole.upvoted.post.names") || "[]");
+    this.upvotedNames = JSON.parse(localStorage.getItem(`anatole.upvoted.${key}.names`) || "[]");
   },
   upvoted(id: string) {
     return this.upvotedNames.includes(id);
@@ -25,9 +25,9 @@ export default (): PostState => ({
 
     xhr.onload = () => {
       this.upvotedNames = [...this.upvotedNames, name];
-      localStorage.setItem("anatole.upvoted.post.names", JSON.stringify(this.upvotedNames));
+      localStorage.setItem(`anatole.upvoted.${key}.names`, JSON.stringify(this.upvotedNames));
 
-      const upvoteNode = document.querySelector('[data-upvote-post-name="' + name + '"]');
+      const upvoteNode = document.querySelector("[data-upvote-" + key + '-name="' + name + '"]');
 
       if (!upvoteNode) {
         return;
@@ -41,8 +41,8 @@ export default (): PostState => ({
     };
     xhr.send(
       JSON.stringify({
-        group: "content.halo.run",
-        plural: "posts",
+        group: group,
+        plural: plural,
         name: name,
       })
     );

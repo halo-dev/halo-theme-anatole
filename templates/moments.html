@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{module/layout :: html(title = '瞬间 - ' + ${site.title}, content = ~{::content})}"
+>
+  <th:block th:fragment="content">
+    <th:block
+      th:replace="~{module/page-heading :: html(title = '瞬间', subtitle=|${moments.total} 篇|, nested = null)}"
+    ></th:block>
+    <div class="post-page">
+      <div class="post animated fadeInDown">
+        <ul role="list" class="divide-y divide-gray-100" x-data="upvote('moment','moment.halo.run','moments')">
+          <li
+            th:each="moment : ${moments.items}"
+            th:attr="x-data=|{name:'${moment.metadata.name}',showComment:false}|"
+            th:with="content=${moment.spec.content}"
+            class="flex items-start gap-2 py-5"
+          >
+            <img class="h-12 w-12 rounded-full" th:src="${moment.owner.avatar}" th:alt="${moment.owner.displayName}" />
+            <div class="ml-5 flex-1">
+              <div th:utext="${content.html}" class="markdown-body !text-sm !text-gray-500"></div>
+              <div class="mt-3 flex items-center gap-4">
+                <div
+                  class="journal-likes inline-flex cursor-pointer items-center text-sm text-gray-400 transition-all hover:text-red-700"
+                  x-bind:class="{'text-red-700': upvoted(name)}"
+                  @click="handleUpvote(name)"
+                >
+                  <i x-show="upvoted(name)" class="i-mdi-heart h-3 w-3"></i>
+                  <i x-show="!upvoted(name)" class="i-mdi-heart-outline h-3 w-3"></i>
+                  <span
+                    class="ml-1"
+                    th:attr="data-upvote-moment-name=${moment.metadata.name}"
+                    th:text="${moment.stats.upvote}"
+                  >
+                  </span>
+                </div>
+                <div
+                  class="inline-flex cursor-pointer items-center text-sm text-gray-400 transition-all hover:text-black"
+                  x-on:click="showComment = !showComment"
+                >
+                  <i class="i-mdi-comment-outline h-3 w-3"></i>
+                  <span class="ml-1" th:text="${moment.stats.approvedComment}"> </span>
+                </div>
+                <div
+                  class="inline-flex cursor-pointer items-center text-sm text-gray-400 transition-all hover:text-black sm:hidden"
+                >
+                  <i class="i-mdi-calendar-month-outline h-3 w-3"></i>
+                  <span class="ml-1" th:text="${#dates.format(moment.spec.releaseTime,'yyyy-MM-dd')}"> </span>
+                </div>
+              </div>
+
+              <div class="mt-2" x-show="showComment">
+                <halo:comment
+                  group="moment.halo.run"
+                  kind="Moment"
+                  th:attr="name=${moment.metadata.name}"
+                  colorScheme="'light'"
+                />
+              </div>
+            </div>
+            <div class="hidden sm:flex">
+              <time
+                class="text-sm text-gray-400"
+                th:text="${#dates.format(moment.spec.releaseTime,'yyyy-MM-dd')}"
+              ></time>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div th:if="${moments.hasPrevious() || moments.hasNext()}" class="pagination flex items-center justify-between">
+      <a th:if="${moments.hasPrevious()}" class="btn" role="navigation" th:href="@{${moments.prevUrl}}" title="上一页">
+        上一页
+      </a>
+      <span class="text-sm" th:text="|${moments.page} / ${moments.totalPages}|"></span>
+      <a th:if="${moments.hasNext()}" class="btn" role="navigation" th:href="@{${moments.nextUrl}}" title="下一页">
+        下一页
+      </a>
+    </div>
+  </th:block>
+</html>

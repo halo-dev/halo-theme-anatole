@@ -3,9 +3,10 @@ import "./libs/github-markdown-css/github-markdown-light.css";
 import "./css/style.scss";
 
 import Alpine from "alpinejs";
-import posts from "./alpine-data/posts";
+import upvote from "./alpine-data/upvote";
 
-Alpine.data("posts", posts);
+// @ts-ignore
+Alpine.data("upvote", upvote);
 
 window.Alpine = Alpine;
 
