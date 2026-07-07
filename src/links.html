@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html
-  xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{module/layout :: html(title = '友情链接 - ' + ${site.title}, content = ~{::content})}"
->
-  <th:block th:fragment="content">
+<include src="layout.html">
+  <template name="head">
+    <title th:text="'友情链接 - ' + ${site.title}"></title>
+  </template>
+
     <th:block th:replace="~{module/page-heading :: html(title = '友情链接', subtitle='', nested = null)}"></th:block>
     <div class="post-page">
       <div class="post animated fadeInDown">
@@ -31,5 +30,4 @@
         </div>
       </div>
     </div>
-  </th:block>
-</html>
+</include>

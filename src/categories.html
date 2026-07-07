@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html
-  xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{module/layout :: html(title = '分类目录 - ' + ${site.title}, content = ~{::content})}"
->
-  <th:block th:fragment="content">
+<include src="layout.html">
+  <template name="head">
+    <title th:text="'分类目录 - ' + ${site.title}"></title>
+  </template>
+
     <th:block
       th:replace="~{module/page-heading :: html(title = '分类目录', subtitle= ${#lists.size(categories)}, nested = null)}"
     ></th:block>
@@ -57,5 +56,4 @@
         </div>
       </div>
     </div>
-  </th:block>
-</html>
+</include>

@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const { Icons } = require("tailwindcss-plugin-icons");
 module.exports = {
-  content: ["./templates/**/*.html", "./src/main.ts"],
+  content: ["./src/**/*.{html,ts}"],
   theme: {
     extend: {},
   },

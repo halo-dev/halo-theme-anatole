@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html
-  xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{module/layout :: html(title = '瞬间 - ' + ${site.title}, content = ~{::content})}"
->
-  <th:block th:fragment="content">
+<include src="layout.html">
+  <template name="head">
+    <title th:text="'瞬间 - ' + ${site.title}"></title>
+    <script type="module" src="./assets/content.ts"></script>
+    <script type="module" src="./assets/interactive.ts"></script>
+  </template>
+
     <th:block
       th:replace="~{module/page-heading :: html(title = '瞬间', subtitle=|${moments.total} 篇|, nested = null)}"
     ></th:block>
@@ -78,5 +79,4 @@
         下一页
       </a>
     </div>
-  </th:block>
-</html>
+</include>
