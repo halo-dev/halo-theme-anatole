@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html
-  xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{module/layout :: html(title = '标签：' + ${tag.spec.displayName} + ' - ' + ${site.title}, content = ~{::content})}"
->
-  <th:block th:fragment="content">
+<include src="layout.html">
+  <template name="head">
+    <title th:text="'标签：' + ${tag.spec.displayName} + ' - ' + ${site.title}"></title>
+    <script type="module" src="./assets/interactive.ts"></script>
+  </template>
+
     <th:block
       th:replace="~{module/page-heading :: html(title = |标签：${tag.spec.displayName}|, subtitle=|${tag.postCount} 篇文章|, nested = null)}"
     ></th:block>
@@ -19,5 +19,4 @@
         下一页
       </a>
     </div>
-  </th:block>
-</html>
+</include>

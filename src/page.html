@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html
-  xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{module/layout :: html(title =${singlePage.spec.title} + ' - ' + ${site.title}, content = ~{::content})}"
->
-  <th:block th:fragment="content">
+<include src="layout.html">
+  <template name="head">
+    <title th:text="${singlePage.spec.title} + ' - ' + ${site.title}"></title>
+    <script type="module" src="./assets/content.ts"></script>
+  </template>
+
     <th:block
       th:replace="~{module/page-heading :: html(title = ${singlePage.spec.title},subtitle='', nested = ~{::nested})}"
     >
@@ -34,5 +34,4 @@
         />
       </div>
     </div>
-  </th:block>
-</html>
+</include>

@@ -1,16 +1,5 @@
-import "./css/tailwind.css";
-import "./libs/github-markdown-css/github-markdown-light.css";
-import "./css/style.scss";
-
-import Alpine from "alpinejs";
-import upvote from "./alpine-data/upvote";
-
-// @ts-ignore
-Alpine.data("upvote", upvote);
-
-window.Alpine = Alpine;
-
-Alpine.start();
+import "../css/tailwind.css";
+import "../css/style.scss";
 
 document.addEventListener("DOMContentLoaded", () => {
   const href = location.href; // http://localhost:8090/
@@ -37,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if ([href, pathname].includes(currentHref)) {
-      console.log(node);
       node.parentElement?.classList.add("current");
       return;
     }
