@@ -13,12 +13,6 @@
     <link rel="alternate" type="application/rss+xml" title="atom 1.0" href="/rss.xml" />
     <include src="styles.html"></include>
     <script type="module" src="./assets/main.ts"></script>
-
-    <link
-      th:if="${theme.config.basic.katex} and ${_templateId == 'post' or _templateId == 'page'}"
-      th:href="@{/assets/libs/katex/katex.min.css}"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <include src="sidebar.html"></include>
