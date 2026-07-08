@@ -2,13 +2,16 @@ apiVersion: theme.halo.run/v1alpha1
 kind: Theme
 metadata:
   name: theme-anatole
+  annotations:
+    # Add supports for Halo App Store
+    # https://www.halo.run/store/apps/app-KcHZz
+    "store.halo.run/app-id": "app-KcHZz"
 spec:
   displayName: Anatole
   author:
     name: Caicai
     website: https://www.caicai.me
   description: Halo Default Theme
-  logo: https://avatars1.githubusercontent.com/u/1811819?s=460&v=4
   website: https://github.com/halo-dev/halo-theme-anatole
   repo: https://github.com/halo-dev/halo-theme-anatole
   settingName: theme-anatole-setting
