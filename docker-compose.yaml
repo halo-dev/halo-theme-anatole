@@ -1,0 +1,21 @@
+services:
+  halo:
+    image: registry.fit2cloud.com/halo/halo:2.25
+    restart: on-failure:3
+    volumes:
+      - ./halo2:/root/.halo2
+      - .:/root/.halo2/themes/theme-anatole
+    ports:
+      - "8090:8090"
+    healthcheck:
+      test:
+        ["CMD", "curl", "-f", "http://localhost:8090/actuator/health/readiness"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    environment:
+      - JVM_OPTS=-Xmx256m -Xms256m
+      - SPRING_THYMELEAF_CACHE=false
+    command:
+      - --halo.external-url=http://localhost:8090/
