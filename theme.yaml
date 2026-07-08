@@ -11,7 +11,6 @@ spec:
   author:
     name: Caicai
     website: https://www.caicai.me
-  description: Halo Default Theme
   website: https://github.com/halo-dev/halo-theme-anatole
   repo: https://github.com/halo-dev/halo-theme-anatole
   settingName: theme-anatole-setting
