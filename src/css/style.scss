@@ -357,6 +357,12 @@ a.btn {
         h3 {
           font-size: 20px;
         }
+
+        a {
+          font-size: 20px;
+          line-height: 1.4;
+          overflow-wrap: anywhere;
+        }
       }
     }
   }
@@ -375,21 +381,17 @@ a.btn {
     z-index: 2;
     position: absolute;
   }
-
-  .footer {
-    display: none;
-  }
 }
 
 .markdown-body {
   ul {
     list-style: disc;
   }
-  
+
   ol {
     list-style: decimal;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     border: none !important;
   }

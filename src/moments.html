@@ -20,6 +20,31 @@
             <img class="h-12 w-12 rounded-full" th:src="${moment.owner.avatar}" th:alt="${moment.owner.displayName}" />
             <div class="ml-5 flex-1">
               <div th:utext="${content.html}" class="markdown-body !text-sm !text-gray-500"></div>
+              <div th:if="${not #lists.isEmpty(content.medium)}" class="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                <th:block th:each="momentItem : ${content.medium}">
+                  <img
+                    th:if="${momentItem.type.name == 'PHOTO'}"
+                    th:src="${momentItem.url}"
+                    th:alt="${moment.owner.displayName}"
+                    class="w-full rounded-lg border border-gray-200"
+                    loading="lazy"
+                  />
+                  <video
+                    th:if="${momentItem.type.name == 'VIDEO'}"
+                    th:src="${momentItem.url}"
+                    class="w-full rounded-lg border border-gray-200"
+                    controls
+                    preload="metadata"
+                  ></video>
+                  <audio
+                    th:if="${momentItem.type.name == 'AUDIO'}"
+                    th:src="${momentItem.url}"
+                    class="w-full"
+                    controls
+                    preload="metadata"
+                  ></audio>
+                </th:block>
+              </div>
               <div class="mt-3 flex items-center gap-4">
                 <div
                   class="journal-likes inline-flex cursor-pointer items-center text-sm text-gray-400 transition-all hover:text-red-700"
